@@ -1,0 +1,6 @@
+folder,fruit,freshness,day_min,day_max,filename,extension,is_augmented,source_image,file_size_kb,width,height,mode,mean_r,mean_g,mean_b,brightness,contrast,aspect_ratio,readable
+Semi Fresh Cucumber(6-12),Cucumber,Semi Fresh,6,12,aug_271_IMG_20260120_005035.jpg,.jpg,True,IMG_20260120_005035.jpg,20.619140625,512,512,RGB,169.46118,164.17206,152.01636,161.88321,47.586113,1.0,True
+Rotten Tomato(24-35),Tomato,Rotten,24,35,IMG_20260124_112852459_HDR_AE.jpg,.jpg,False,IMG_20260124_112852459_HDR_AE.jpg,28.947265625,512,512,RGB,204.7691,153.93481,145.2666,167.99017,63.762054,1.0,True
+Fresh Orange(1-9),Orange,Fresh,1,9,aug_243_IMG_20251107_113905312_HDR_AE.jpg,.jpg,True,IMG_20251107_113905312_HDR_AE.jpg,27.2822265625,512,512,RGB,203.4267,202.00128,168.05786,191.16194,69.1915,1.0,True
+Semi Fresh Cucumber(6-12),Cucumber,Semi Fresh,6,12,IMG_20251105_142844.jpg,.jpg,False,IMG_20251105_142844.jpg,17.1025390625,512,512,RGB,172.87103,169.72424,150.64905,164.41478,23.18999,1.0,True
+Fresh Banana(1-4),Banana,Fresh,1,4,aug_29_IMG_20251103_192207940_HDR.jpg,.jpg,True,IMG_20251103_192207940_HDR.jpg,16.6572265625,512,512,RGB,167.52429,160.44098,132.00232,153.32254,34.79803,1.0,True

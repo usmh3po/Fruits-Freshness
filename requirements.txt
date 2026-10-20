@@ -1,0 +1,6 @@
+numpy
+pandas
+matplotlib
+pillow
+transformers
+# torch / torchvision: install the CUDA build separately, see README

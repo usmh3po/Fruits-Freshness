@@ -1,0 +1,132 @@
+======================================================================
+DATASET OVERVIEW
+======================================================================
+Total images      : 14160
+Classes (folders) : 24
+Fruits            : Banana, Bittermelon, Cucumber, Eggplant, Orange, Papaya, Pineapple, Tomato
+Freshness levels  : Fresh, Semi Fresh, Rotten
+Augmented images  : 8943 (63.2%)
+Unique source imgs: 5188
+
+SCHEMA
+      column   dtype                                                                                                                                                                                                                                                          example
+      folder     str                                                                                                                                                                                                                                                Fresh Banana(1-4)
+       fruit     str                                                                                                                                                                                                                                                           Banana
+   freshness     str                                                                                                                                                                                                                                                            Fresh
+     day_min   int64                                                                                                                                                                                                                                                                1
+     day_max   int64                                                                                                                                                                                                                                                                4
+    filename     str                                                                                                                                                                                                                        aug_0_IMG_20251104_131910090_HDR_AE~2.jpg
+   extension     str                                                                                                                                                                                                                                                             .jpg
+is_augmented    bool                                                                                                                                                                                                                                                             True
+source_image     str                                                                                                                                                                                                                              IMG_20251104_131910090_HDR_AE~2.jpg
+file_size_kb float64                                                                                                                                                                                                                                                        32.149414
+         md5     str                                                                                                                                                                                                                                 3204e545b7577fc63075ab7dc398b942
+       width   int64                                                                                                                                                                                                                                                              512
+      height   int64                                                                                                                                                                                                                                                              512
+        mode     str                                                                                                                                                                                                                                                              RGB
+       ahash     str 1111111111111011111111111111111111111110000100111111111111111011111000111101110111000011110111111100001111001111100000111110011100000011111101100000001110111010000000111011101000000011100111110000000110011111000000001100111100101000000011110001100110000111
+      mean_r float32                                                                                                                                                                                                                                                       201.260193
+      mean_g float32                                                                                                                                                                                                                                                         186.6604
+      mean_b float32                                                                                                                                                                                                                                                       147.813904
+  brightness float32                                                                                                                                                                                                                                                       178.578156
+    contrast float32                                                                                                                                                                                                                                                        50.471409
+aspect_ratio float64                                                                                                                                                                                                                                                              1.0
+    readable    bool                                                                                                                                                                                                                                                             True
+       error float64                                                                                                                                                                                                                                                             None
+
+EXAMPLE ROWS
+                   folder    fruit  freshness  day_min  day_max                                  filename extension  is_augmented                      source_image  file_size_kb  width  height mode     mean_r     mean_g     mean_b  brightness  contrast  aspect_ratio  readable
+Semi Fresh Cucumber(6-12) Cucumber Semi Fresh        6       12           aug_271_IMG_20260120_005035.jpg      .jpg          True           IMG_20260120_005035.jpg     20.619141    512     512  RGB 169.461182 164.172058 152.016357  161.883209 47.586113           1.0      True
+     Rotten Tomato(24-35)   Tomato     Rotten       24       35         IMG_20260124_112852459_HDR_AE.jpg      .jpg         False IMG_20260124_112852459_HDR_AE.jpg     28.947266    512     512  RGB 204.769104 153.934814 145.266602  167.990173 63.762054           1.0      True
+        Fresh Orange(1-9)   Orange      Fresh        1        9 aug_243_IMG_20251107_113905312_HDR_AE.jpg      .jpg          True IMG_20251107_113905312_HDR_AE.jpg     27.282227    512     512  RGB 203.426697 202.001282 168.057861  191.161942 69.191498           1.0      True
+Semi Fresh Cucumber(6-12) Cucumber Semi Fresh        6       12                   IMG_20251105_142844.jpg      .jpg         False           IMG_20251105_142844.jpg     17.102539    512     512  RGB 172.871033 169.724243 150.649048  164.414780 23.189989           1.0      True
+        Fresh Banana(1-4)   Banana      Fresh        1        4     aug_29_IMG_20251103_192207940_HDR.jpg      .jpg          True    IMG_20251103_192207940_HDR.jpg     16.657227    512     512  RGB 167.524292 160.440979 132.002319  153.322540 34.798031           1.0      True
+
+======================================================================
+MISSINGNESS
+======================================================================
+              missing  pct
+folder              0 0.00
+fruit               0 0.00
+freshness           0 0.00
+day_min             0 0.00
+day_max             0 0.00
+filename            0 0.00
+extension           0 0.00
+is_augmented        0 0.00
+source_image        0 0.00
+file_size_kb        0 0.00
+md5                 0 0.00
+width               0 0.00
+height              0 0.00
+mode                0 0.00
+ahash               0 0.00
+mean_r              0 0.00
+mean_g              0 0.00
+mean_b              0 0.00
+brightness          0 0.00
+contrast            0 0.00
+aspect_ratio        0 0.00
+readable            0 0.00
+
+Unreadable/corrupt images: 0
+
+======================================================================
+CLASS COUNTS (fruit x freshness)
+======================================================================
+freshness    Fresh  Semi Fresh  Rotten  Total
+fruit                                        
+Banana         590         590     590   1770
+Bittermelon    590         590     590   1770
+Cucumber       590         590     590   1770
+Eggplant       590         590     590   1770
+Orange         590         590     590   1770
+Papaya         590         590     590   1770
+Pineapple      590         590     590   1770
+Tomato         590         590     590   1770
+Total         4720        4720    4720  14160
+
+======================================================================
+SUMMARY STATISTICS (numeric fields)
+======================================================================
+                count   mean   std    min    25%    50%    75%    max
+file_size_kb 14160.00  24.05  9.77   8.36  17.07  20.82  28.21  70.76
+width        14160.00 512.00  0.00 512.00 512.00 512.00 512.00 512.00
+height       14160.00 512.00  0.00 512.00 512.00 512.00 512.00 512.00
+aspect_ratio 14160.00   1.00  0.00   1.00   1.00   1.00   1.00   1.00
+brightness   14160.00 162.23 23.99  58.73 153.15 164.06 173.61 247.60
+contrast     14160.00  49.28 13.86   8.88  40.56  50.06  58.55  99.89
+mean_r       14160.00 170.39 25.99  54.33 160.26 172.75 183.33 251.25
+mean_g       14160.00 165.73 24.27  60.32 157.20 167.55 176.65 248.49
+mean_b       14160.00 150.57 24.57  38.59 139.52 152.54 162.93 243.91
+day_min      14160.00   7.12  7.13   1.00   1.00   4.50   9.25  25.00
+day_max      14160.00  14.00 10.01   3.00   6.75  11.00  20.00  35.00
+
+Mean pixel stats by freshness:
+            brightness  contrast  mean_r  mean_g  mean_b  file_size_kb
+freshness                                                             
+Fresh           162.41     50.50  170.87  167.25  149.09         22.71
+Semi Fresh      163.73     48.82  172.24  167.79  151.16         23.11
+Rotten          160.56     48.52  168.06  162.15  151.45         26.34
+
+Image resolutions (top 10):
+512x512    14160
+Image modes: {'RGB': 14160}
+
+======================================================================
+DUPLICATES
+======================================================================
+Exact duplicate files (same MD5): 76 files in 36 groups
+  ...of which groups span >1 class (label conflict): 17
+Near duplicates (identical perceptual hash): 8333 files in 2939 groups
+  ...of which groups span >1 class: 18
+Note: near-duplicates are expected here since many images are augmentations of the same source.
+Copies per source image: min=1, median=2, max=22
+
+======================================================================
+OUTLIERS (IQR rule, k=1.5)
+======================================================================
+file_size_kb   :   761 outliers  (valid range 0.36 .. 44.92)
+brightness     :  1515 outliers  (valid range 122.46 .. 204.30)
+contrast       :   136 outliers  (valid range 13.57 .. 85.55)
+aspect_ratio   :     0 outliers  (valid range 1.00 .. 1.00)

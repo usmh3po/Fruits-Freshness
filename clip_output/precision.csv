@@ -1,0 +1,25 @@
+sentence_id,sentence,label,selected,correct,precision,most_common_true_label
+0,an image of a fresh banana,Fresh Banana,100,85,0.85,Fresh Banana
+1,an image of a slightly rotten banana,Semi Fresh Banana,100,65,0.65,Semi Fresh Banana
+2,an image of a rotten banana,Rotten Banana,100,1,0.01,Semi Fresh Banana
+3,an image of a fresh bitter melon,Fresh Bittermelon,100,0,0.0,Semi Fresh Cucumber
+4,an image of a slightly rotten bitter melon,Semi Fresh Bittermelon,100,0,0.0,Semi Fresh Cucumber
+5,an image of a rotten bitter melon,Rotten Bittermelon,100,3,0.03,Semi Fresh Eggplant
+6,an image of a fresh cucumber,Fresh Cucumber,100,96,0.96,Fresh Cucumber
+7,an image of a slightly rotten cucumber,Semi Fresh Cucumber,100,4,0.04,Fresh Cucumber
+8,an image of a rotten cucumber,Rotten Cucumber,100,2,0.02,Fresh Cucumber
+9,an image of a fresh eggplant,Fresh Eggplant,100,21,0.21,Rotten Eggplant
+10,an image of a slightly rotten eggplant,Semi Fresh Eggplant,100,10,0.1,Rotten Banana
+11,an image of a rotten eggplant,Rotten Eggplant,100,0,0.0,Rotten Banana
+12,an image of a fresh orange,Fresh Orange,100,29,0.29,Semi Fresh Orange
+13,an image of a slightly rotten orange,Semi Fresh Orange,100,3,0.03,Semi Fresh Tomato
+14,an image of a rotten orange,Rotten Orange,100,53,0.53,Rotten Orange
+15,an image of a fresh papaya,Fresh Papaya,100,20,0.2,Rotten Cucumber
+16,an image of a slightly rotten papaya,Semi Fresh Papaya,100,5,0.05,Fresh Cucumber
+17,an image of a rotten papaya,Rotten Papaya,100,3,0.03,Semi Fresh Bittermelon
+18,an image of a fresh pineapple,Fresh Pineapple,100,80,0.8,Fresh Pineapple
+19,an image of a slightly rotten pineapple,Semi Fresh Pineapple,100,48,0.48,Semi Fresh Pineapple
+20,an image of a rotten pineapple,Rotten Pineapple,100,55,0.55,Rotten Pineapple
+21,an image of a fresh tomato,Fresh Tomato,100,45,0.45,Fresh Tomato
+22,an image of a slightly rotten tomato,Semi Fresh Tomato,100,18,0.18,Fresh Tomato
+23,an image of a rotten tomato,Rotten Tomato,100,65,0.65,Rotten Tomato
