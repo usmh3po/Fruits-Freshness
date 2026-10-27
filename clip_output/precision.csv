@@ -1,25 +1,97 @@
-sentence_id,sentence,label,selected,correct,precision,most_common_true_label
-0,an image of a fresh banana,Fresh Banana,100,85,0.85,Fresh Banana
-1,an image of a slightly rotten banana,Semi Fresh Banana,100,65,0.65,Semi Fresh Banana
-2,an image of a rotten banana,Rotten Banana,100,1,0.01,Semi Fresh Banana
-3,an image of a fresh bitter melon,Fresh Bittermelon,100,0,0.0,Semi Fresh Cucumber
-4,an image of a slightly rotten bitter melon,Semi Fresh Bittermelon,100,0,0.0,Semi Fresh Cucumber
-5,an image of a rotten bitter melon,Rotten Bittermelon,100,3,0.03,Semi Fresh Eggplant
-6,an image of a fresh cucumber,Fresh Cucumber,100,96,0.96,Fresh Cucumber
-7,an image of a slightly rotten cucumber,Semi Fresh Cucumber,100,4,0.04,Fresh Cucumber
-8,an image of a rotten cucumber,Rotten Cucumber,100,2,0.02,Fresh Cucumber
-9,an image of a fresh eggplant,Fresh Eggplant,100,21,0.21,Rotten Eggplant
-10,an image of a slightly rotten eggplant,Semi Fresh Eggplant,100,10,0.1,Rotten Banana
-11,an image of a rotten eggplant,Rotten Eggplant,100,0,0.0,Rotten Banana
-12,an image of a fresh orange,Fresh Orange,100,29,0.29,Semi Fresh Orange
-13,an image of a slightly rotten orange,Semi Fresh Orange,100,3,0.03,Semi Fresh Tomato
-14,an image of a rotten orange,Rotten Orange,100,53,0.53,Rotten Orange
-15,an image of a fresh papaya,Fresh Papaya,100,20,0.2,Rotten Cucumber
-16,an image of a slightly rotten papaya,Semi Fresh Papaya,100,5,0.05,Fresh Cucumber
-17,an image of a rotten papaya,Rotten Papaya,100,3,0.03,Semi Fresh Bittermelon
-18,an image of a fresh pineapple,Fresh Pineapple,100,80,0.8,Fresh Pineapple
-19,an image of a slightly rotten pineapple,Semi Fresh Pineapple,100,48,0.48,Semi Fresh Pineapple
-20,an image of a rotten pineapple,Rotten Pineapple,100,55,0.55,Rotten Pineapple
-21,an image of a fresh tomato,Fresh Tomato,100,45,0.45,Fresh Tomato
-22,an image of a slightly rotten tomato,Semi Fresh Tomato,100,18,0.18,Fresh Tomato
-23,an image of a rotten tomato,Rotten Tomato,100,65,0.65,Rotten Tomato
+sentence_id,label,sentence,selected,correct,precision,most_common_true_label
+0,Fresh Banana,a photo of a fresh yellow banana with only a few small brown spots,50,47,0.94,Fresh Banana
+1,Fresh Banana,"a photo of a short, bright yellow banana with a smooth peel",50,28,0.56,Fresh Banana
+2,Fresh Banana,a photo of a fresh yellow banana with a green-tinged stem,50,28,0.56,Fresh Banana
+3,Fresh Banana,a photo of a plump ripe yellow banana with a few brown freckles,50,49,0.98,Fresh Banana
+4,Semi Fresh Banana,a photo of an overripe banana with large black patches on its yellow peel,50,42,0.84,Semi Fresh Banana
+5,Semi Fresh Banana,a photo of a yellow banana turning brown and black,50,39,0.78,Semi Fresh Banana
+6,Semi Fresh Banana,a photo of a banana with big dark brown bruises covering much of its peel,50,28,0.56,Semi Fresh Banana
+7,Semi Fresh Banana,a photo of a soft overripe banana with many black spots and streaks,50,35,0.7,Semi Fresh Banana
+8,Rotten Banana,"a photo of a rotten banana with a completely black, shriveled peel",50,22,0.44,Rotten Banana
+9,Rotten Banana,a photo of a rotten banana that has turned dark purple-black all over,50,14,0.28,Semi Fresh Banana
+10,Rotten Banana,"a photo of a rotten banana with dark brown, leathery skin and a dried stem",50,45,0.9,Rotten Banana
+11,Rotten Banana,a photo of a mushy rotten black banana with its peel splitting,50,21,0.42,Semi Fresh Banana
+12,Fresh Bittermelon,"a photo of a fresh karela with ridged, spiky, warty green skin, shaped like a leaf",50,49,0.98,Fresh Bittermelon
+13,Fresh Bittermelon,a photo of a fresh green karela with warty skin and a thin stem,50,15,0.3,Rotten Papaya
+14,Fresh Bittermelon,a photo of a green bitter gourd with many small bumps and ridges along its length,50,0,0.0,Rotten Cucumber
+15,Fresh Bittermelon,a photo of a fresh green karela lying on a cloth,50,35,0.7,Fresh Bittermelon
+16,Semi Fresh Bittermelon,a photo of a wilting bumpy bitter melon with yellow patches,50,13,0.26,Semi Fresh Bittermelon
+17,Semi Fresh Bittermelon,a photo of a bitter melon turning yellow-orange at the tips,50,11,0.22,Rotten Cucumber
+18,Semi Fresh Bittermelon,a photo of a karela with warty skin turning yellow,50,6,0.12,Fresh Orange
+19,Semi Fresh Bittermelon,a photo of a slightly dried green and yellow karela with a curly stem,50,33,0.66,Semi Fresh Bittermelon
+20,Rotten Bittermelon,a photo of a rotten bitter gourd that has turned orange with white mold,50,43,0.86,Rotten Bittermelon
+21,Rotten Bittermelon,a photo of a bitter gourd covered in white fuzzy mold with orange patches,50,38,0.76,Rotten Bittermelon
+22,Rotten Bittermelon,a photo of a rotting orange-yellow bitter melon with a long curly stalk,50,20,0.4,Semi Fresh Bittermelon
+23,Rotten Bittermelon,a photo of a rotten karela covered with white mold,50,22,0.44,Rotten Bittermelon
+24,Fresh Cucumber,a photo of a fresh green cucumber with light stripes and smooth firm skin,50,39,0.78,Fresh Cucumber
+25,Fresh Cucumber,a photo of a fresh crisp green cucumber,50,49,0.98,Fresh Cucumber
+26,Fresh Cucumber,a photo of a fresh dark green cucumber with glossy skin,50,45,0.9,Fresh Cucumber
+27,Fresh Cucumber,a photo of a fresh green cucumber with small bumps,50,48,0.96,Fresh Cucumber
+28,Semi Fresh Cucumber,"a photo of a dark green cucumber with rough, speckled skin",50,24,0.48,Fresh Cucumber
+29,Semi Fresh Cucumber,a photo of a cucumber with mottled green and brown patches,50,19,0.38,Fresh Cucumber
+30,Semi Fresh Cucumber,a photo of a cucumber with brown and dark green blotchy skin,50,4,0.08,Fresh Cucumber
+31,Semi Fresh Cucumber,a photo of an aging cucumber with yellow and brown mottled skin,50,5,0.1,Rotten Cucumber
+32,Rotten Cucumber,a photo of an overripe pale yellow cucumber,50,40,0.8,Rotten Cucumber
+33,Rotten Cucumber,a photo of a large pale cream-colored overripe cucumber,50,50,1.0,Rotten Cucumber
+34,Rotten Cucumber,a photo of an old yellow cucumber with smooth pale skin,50,43,0.86,Rotten Cucumber
+35,Rotten Cucumber,a photo of a whitish-yellow overripe cucumber with faint stripes,50,46,0.92,Rotten Cucumber
+36,Fresh Eggplant,a photo of a fresh round green striped eggplant with a green stem,50,24,0.48,Fresh Eggplant
+37,Fresh Eggplant,a photo of a fresh green striped round brinjal with a curved stem,50,35,0.7,Fresh Eggplant
+38,Fresh Eggplant,a photo of a fresh striped green brinjal with a long green stalk,50,32,0.64,Fresh Eggplant
+39,Fresh Eggplant,a photo of a round eggplant with green and white stripes,50,16,0.32,Rotten Cucumber
+40,Semi Fresh Eggplant,a photo of a pink-purple round eggplant,50,13,0.26,Rotten Eggplant
+41,Semi Fresh Eggplant,"a photo of a green striped eggplant with soft, dented skin",50,4,0.08,Fresh Eggplant
+42,Semi Fresh Eggplant,a photo of a magenta eggplant with smooth skin,50,16,0.32,Rotten Eggplant
+43,Semi Fresh Eggplant,a photo of a green eggplant with a few wrinkles near its stalk,50,16,0.32,Semi Fresh Eggplant
+44,Rotten Eggplant,"a photo of a shrunken, decaying purple or green brinjal",50,34,0.68,Rotten Eggplant
+45,Rotten Eggplant,a photo of a glossy purple and white eggplant with wrinkles,50,31,0.62,Rotten Eggplant
+46,Rotten Eggplant,a photo of a rotten green brinjal with wrinkled skin like a crumpled cabbage leaf,50,12,0.24,Rotten Papaya
+47,Rotten Eggplant,a photo of a shriveled purple-pink eggplant,50,50,1.0,Rotten Eggplant
+48,Fresh Orange,a photo of a fresh green citrus orange with a shiny peel,50,36,0.72,Fresh Orange
+49,Fresh Orange,a photo of a small fresh dark green lime-like orange,50,36,0.72,Fresh Orange
+50,Fresh Orange,a photo of a fresh green orange with a leaf attached,50,35,0.7,Fresh Orange
+51,Fresh Orange,a photo of a fresh dark green mosambi citrus fruit,50,21,0.42,Semi Fresh Orange
+52,Semi Fresh Orange,a photo of a yellow-orange citrus fruit starting to soften,50,33,0.66,Semi Fresh Orange
+53,Semi Fresh Orange,a photo of a round yellow citrus fruit with a slightly dull peel,50,9,0.18,Rotten Orange
+54,Semi Fresh Orange,a photo of a yellow-green orange with a smooth peel,50,38,0.76,Semi Fresh Orange
+55,Semi Fresh Orange,a photo of a ripe yellow mosambi citrus fruit,50,37,0.74,Semi Fresh Orange
+56,Rotten Orange,"a photo of a rotten orange with a brown, moldy, shriveled peel",50,15,0.3,Rotten Tomato
+57,Rotten Orange,a photo of a decayed dark brown citrus fruit covered in mold,50,36,0.72,Rotten Orange
+58,Rotten Orange,a photo of a rotten orange with grey and black mold spots,50,26,0.52,Rotten Orange
+59,Rotten Orange,a photo of a rotten orange that has turned brown and grey,50,49,0.98,Rotten Orange
+60,Fresh Papaya,"a photo of a fresh green papaya with smooth, unblemished skin",50,22,0.44,Fresh Papaya
+61,Fresh Papaya,a photo of a firm unripe green papaya,50,37,0.74,Fresh Papaya
+62,Fresh Papaya,a photo of a pear-shaped bright green papaya,50,46,0.92,Fresh Papaya
+63,Fresh Papaya,a photo of a fresh smooth green papaya lying on a cloth,50,25,0.5,Fresh Papaya
+64,Semi Fresh Papaya,a photo of a green papaya with brown scars and blemishes on its skin,50,7,0.14,Fresh Papaya
+65,Semi Fresh Papaya,a photo of a green papaya with a net of thin brown scratch marks,50,28,0.56,Semi Fresh Papaya
+66,Semi Fresh Papaya,"a photo of a pear-shaped green papaya with faded, scarred skin",50,32,0.64,Semi Fresh Papaya
+67,Semi Fresh Papaya,a photo of a green papaya with brown scab-like lines on its skin,50,18,0.36,Semi Fresh Papaya
+68,Rotten Papaya,a photo of a rotten papaya with white mold patches,50,17,0.34,Rotten Papaya
+69,Rotten Papaya,a photo of a green papaya covered in white powdery mold,50,41,0.82,Rotten Papaya
+70,Rotten Papaya,a photo of a green papaya with white and grey mold spots,50,5,0.1,Semi Fresh Papaya
+71,Rotten Papaya,a photo of a decayed brown papaya with white fungus,50,5,0.1,Rotten Banana
+72,Fresh Pineapple,a photo of a fresh pineapple with a green leafy crown,50,31,0.62,Fresh Pineapple
+73,Fresh Pineapple,a photo of a small fresh pineapple with a tall green crown,50,38,0.76,Fresh Pineapple
+74,Fresh Pineapple,a photo of a fresh pineapple crown with long bright green leaves,50,15,0.3,Rotten Pineapple
+75,Fresh Pineapple,a photo of a fresh pineapple with green-yellow scales,50,25,0.5,Fresh Pineapple
+76,Semi Fresh Pineapple,a photo of a ripe orange-brown pineapple with drying leaves,50,32,0.64,Semi Fresh Pineapple
+77,Semi Fresh Pineapple,a photo of a pineapple turning golden brown with wilting crown leaves,50,11,0.22,Rotten Pineapple
+78,Semi Fresh Pineapple,a photo of a golden orange pineapple with green and brown leaves,50,45,0.9,Semi Fresh Pineapple
+79,Semi Fresh Pineapple,a photo of an orange pineapple with some dry leaf tips,50,32,0.64,Semi Fresh Pineapple
+80,Rotten Pineapple,"a photo of a rotten pineapple with dry, brown, dead leaves",50,18,0.36,Semi Fresh Pineapple
+81,Rotten Pineapple,a photo of a shriveled grey-brown decayed pineapple,50,37,0.74,Rotten Pineapple
+82,Rotten Pineapple,"a photo of a dried-out pineapple with grey, withered leaves",50,50,1.0,Rotten Pineapple
+83,Rotten Pineapple,a photo of a rotten pineapple with grey-brown scales and dead leaves,50,30,0.6,Rotten Pineapple
+84,Fresh Tomato,a photo of a fresh orange-red tomato,50,26,0.52,Fresh Tomato
+85,Fresh Tomato,a photo of a fresh orange and red tomato with a green stem,50,43,0.86,Fresh Tomato
+86,Fresh Tomato,a photo of a fresh firm red tomato with a green calyx,50,27,0.54,Fresh Tomato
+87,Fresh Tomato,a photo of a fresh smooth orange tomato,50,22,0.44,Semi Fresh Tomato
+88,Semi Fresh Tomato,"a photo of a red tomato with slightly sagging, soft skin",50,16,0.32,Fresh Tomato
+89,Semi Fresh Tomato,a photo of an orange-red tomato starting to lose firmness,50,15,0.3,Fresh Tomato
+90,Semi Fresh Tomato,a photo of a tomato with a few small wrinkles near the top,50,19,0.38,Fresh Tomato
+91,Semi Fresh Tomato,a photo of a slightly overripe orange-red tomato with dull skin,50,10,0.2,Rotten Tomato
+92,Rotten Tomato,"a photo of a rotten tomato with wrinkled, collapsed skin",50,42,0.84,Rotten Tomato
+93,Rotten Tomato,a photo of a decaying tomato with black mold,50,26,0.52,Rotten Tomato
+94,Rotten Tomato,a photo of a rotten tomato with dark green-black mold spots,50,0,0.0,Semi Fresh Eggplant
+95,Rotten Tomato,"a photo of a squashed, rotting red tomato",50,43,0.86,Rotten Tomato

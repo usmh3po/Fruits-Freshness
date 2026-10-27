@@ -1,5 +1,6 @@
 # Dataset (images are never committed)
 Processed Data/
+Removed Data/
 *.jpg
 *.jpeg
 *.bmp
@@ -12,6 +13,9 @@ Processed Data/
 *.npz
 *.pt
 *.pth
+
+# Training logs (console output, may contain local paths)
+*.log
 
 # Python
 __pycache__/

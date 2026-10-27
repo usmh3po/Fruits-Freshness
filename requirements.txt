@@ -3,4 +3,5 @@ pandas
 matplotlib
 pillow
 transformers
+scikit-learn
 # torch / torchvision: install the CUDA build separately, see README

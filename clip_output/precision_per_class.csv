@@ -1,0 +1,25 @@
+class_id,label,selected,correct,precision,most_common_true_label
+0,Fresh Banana,200,152,0.76,Fresh Banana
+1,Semi Fresh Banana,200,144,0.72,Semi Fresh Banana
+2,Rotten Banana,200,102,0.51,Rotten Banana
+3,Fresh Bittermelon,200,99,0.495,Fresh Bittermelon
+4,Semi Fresh Bittermelon,200,63,0.315,Semi Fresh Bittermelon
+5,Rotten Bittermelon,200,123,0.615,Rotten Bittermelon
+6,Fresh Cucumber,200,181,0.905,Fresh Cucumber
+7,Semi Fresh Cucumber,200,52,0.26,Fresh Cucumber
+8,Rotten Cucumber,200,179,0.895,Rotten Cucumber
+9,Fresh Eggplant,200,107,0.535,Fresh Eggplant
+10,Semi Fresh Eggplant,200,49,0.245,Rotten Eggplant
+11,Rotten Eggplant,200,127,0.635,Rotten Eggplant
+12,Fresh Orange,200,128,0.64,Fresh Orange
+13,Semi Fresh Orange,200,117,0.585,Semi Fresh Orange
+14,Rotten Orange,200,126,0.63,Rotten Orange
+15,Fresh Papaya,200,130,0.65,Fresh Papaya
+16,Semi Fresh Papaya,200,85,0.425,Semi Fresh Papaya
+17,Rotten Papaya,200,68,0.34,Rotten Papaya
+18,Fresh Pineapple,200,109,0.545,Fresh Pineapple
+19,Semi Fresh Pineapple,200,120,0.6,Semi Fresh Pineapple
+20,Rotten Pineapple,200,135,0.675,Rotten Pineapple
+21,Fresh Tomato,200,118,0.59,Fresh Tomato
+22,Semi Fresh Tomato,200,60,0.3,Fresh Tomato
+23,Rotten Tomato,200,111,0.555,Rotten Tomato

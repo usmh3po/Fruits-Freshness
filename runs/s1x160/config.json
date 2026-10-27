@@ -1,0 +1,40 @@
+{
+  "version": "v1.0",
+  "run_name": "s1x160",
+  "seed": 42,
+  "model": "resnet18 (torchvision IMAGENET1K_V1)",
+  "heads": "freshness (3) + fruit (8)",
+  "input": "resize 256x256 -> center crop 224 -> ImageNet mean/std; no extra augmentation",
+  "split": "70/15/15 of original photos per class, augmented copies follow their original",
+  "selection": {
+    "sentences_per_class": 1,
+    "per_sentence": 160,
+    "n_sentences": 24,
+    "n_selected": 3840
+  },
+  "optimizer": "AdamW",
+  "weight_decay": 0.0001,
+  "batch_size": 32,
+  "stage1": {
+    "trainable": "heads",
+    "epochs": 5,
+    "lr": 0.001
+  },
+  "stage2": {
+    "trainable": "layer4 + heads",
+    "lr": 0.0001,
+    "schedule": "cosine"
+  },
+  "max_epochs": 30,
+  "early_stopping": "val freshness macro-F1, patience 5",
+  "loss": "CE(freshness) + w * CE(fruit)",
+  "fruit_loss_weight": 0.5,
+  "label_smoothing": 0.1,
+  "dropout": 0.3,
+  "amp": true,
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.14.1+cu130",
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  }
+}

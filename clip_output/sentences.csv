@@ -1,0 +1,97 @@
+sentence_id,class_id,label,sentence
+0,0,Fresh Banana,a photo of a fresh yellow banana with only a few small brown spots
+1,0,Fresh Banana,"a photo of a short, bright yellow banana with a smooth peel"
+2,0,Fresh Banana,a photo of a fresh yellow banana with a green-tinged stem
+3,0,Fresh Banana,a photo of a plump ripe yellow banana with a few brown freckles
+4,1,Semi Fresh Banana,a photo of an overripe banana with large black patches on its yellow peel
+5,1,Semi Fresh Banana,a photo of a yellow banana turning brown and black
+6,1,Semi Fresh Banana,a photo of a banana with big dark brown bruises covering much of its peel
+7,1,Semi Fresh Banana,a photo of a soft overripe banana with many black spots and streaks
+8,2,Rotten Banana,"a photo of a rotten banana with a completely black, shriveled peel"
+9,2,Rotten Banana,a photo of a rotten banana that has turned dark purple-black all over
+10,2,Rotten Banana,"a photo of a rotten banana with dark brown, leathery skin and a dried stem"
+11,2,Rotten Banana,a photo of a mushy rotten black banana with its peel splitting
+12,3,Fresh Bittermelon,"a photo of a fresh karela with ridged, spiky, warty green skin, shaped like a leaf"
+13,3,Fresh Bittermelon,a photo of a fresh green karela with warty skin and a thin stem
+14,3,Fresh Bittermelon,a photo of a green bitter gourd with many small bumps and ridges along its length
+15,3,Fresh Bittermelon,a photo of a fresh green karela lying on a cloth
+16,4,Semi Fresh Bittermelon,a photo of a wilting bumpy bitter melon with yellow patches
+17,4,Semi Fresh Bittermelon,a photo of a bitter melon turning yellow-orange at the tips
+18,4,Semi Fresh Bittermelon,a photo of a karela with warty skin turning yellow
+19,4,Semi Fresh Bittermelon,a photo of a slightly dried green and yellow karela with a curly stem
+20,5,Rotten Bittermelon,a photo of a rotten bitter gourd that has turned orange with white mold
+21,5,Rotten Bittermelon,a photo of a bitter gourd covered in white fuzzy mold with orange patches
+22,5,Rotten Bittermelon,a photo of a rotting orange-yellow bitter melon with a long curly stalk
+23,5,Rotten Bittermelon,a photo of a rotten karela covered with white mold
+24,6,Fresh Cucumber,a photo of a fresh green cucumber with light stripes and smooth firm skin
+25,6,Fresh Cucumber,a photo of a fresh crisp green cucumber
+26,6,Fresh Cucumber,a photo of a fresh dark green cucumber with glossy skin
+27,6,Fresh Cucumber,a photo of a fresh green cucumber with small bumps
+28,7,Semi Fresh Cucumber,"a photo of a dark green cucumber with rough, speckled skin"
+29,7,Semi Fresh Cucumber,a photo of a cucumber with mottled green and brown patches
+30,7,Semi Fresh Cucumber,a photo of a cucumber with brown and dark green blotchy skin
+31,7,Semi Fresh Cucumber,a photo of an aging cucumber with yellow and brown mottled skin
+32,8,Rotten Cucumber,a photo of an overripe pale yellow cucumber
+33,8,Rotten Cucumber,a photo of a large pale cream-colored overripe cucumber
+34,8,Rotten Cucumber,a photo of an old yellow cucumber with smooth pale skin
+35,8,Rotten Cucumber,a photo of a whitish-yellow overripe cucumber with faint stripes
+36,9,Fresh Eggplant,a photo of a fresh round green striped eggplant with a green stem
+37,9,Fresh Eggplant,a photo of a fresh green striped round brinjal with a curved stem
+38,9,Fresh Eggplant,a photo of a fresh striped green brinjal with a long green stalk
+39,9,Fresh Eggplant,a photo of a round eggplant with green and white stripes
+40,10,Semi Fresh Eggplant,a photo of a pink-purple round eggplant
+41,10,Semi Fresh Eggplant,"a photo of a green striped eggplant with soft, dented skin"
+42,10,Semi Fresh Eggplant,a photo of a magenta eggplant with smooth skin
+43,10,Semi Fresh Eggplant,a photo of a green eggplant with a few wrinkles near its stalk
+44,11,Rotten Eggplant,"a photo of a shrunken, decaying purple or green brinjal"
+45,11,Rotten Eggplant,a photo of a glossy purple and white eggplant with wrinkles
+46,11,Rotten Eggplant,a photo of a rotten green brinjal with wrinkled skin like a crumpled cabbage leaf
+47,11,Rotten Eggplant,a photo of a shriveled purple-pink eggplant
+48,12,Fresh Orange,a photo of a fresh green citrus orange with a shiny peel
+49,12,Fresh Orange,a photo of a small fresh dark green lime-like orange
+50,12,Fresh Orange,a photo of a fresh green orange with a leaf attached
+51,12,Fresh Orange,a photo of a fresh dark green mosambi citrus fruit
+52,13,Semi Fresh Orange,a photo of a yellow-orange citrus fruit starting to soften
+53,13,Semi Fresh Orange,a photo of a round yellow citrus fruit with a slightly dull peel
+54,13,Semi Fresh Orange,a photo of a yellow-green orange with a smooth peel
+55,13,Semi Fresh Orange,a photo of a ripe yellow mosambi citrus fruit
+56,14,Rotten Orange,"a photo of a rotten orange with a brown, moldy, shriveled peel"
+57,14,Rotten Orange,a photo of a decayed dark brown citrus fruit covered in mold
+58,14,Rotten Orange,a photo of a rotten orange with grey and black mold spots
+59,14,Rotten Orange,a photo of a rotten orange that has turned brown and grey
+60,15,Fresh Papaya,"a photo of a fresh green papaya with smooth, unblemished skin"
+61,15,Fresh Papaya,a photo of a firm unripe green papaya
+62,15,Fresh Papaya,a photo of a pear-shaped bright green papaya
+63,15,Fresh Papaya,a photo of a fresh smooth green papaya lying on a cloth
+64,16,Semi Fresh Papaya,a photo of a green papaya with brown scars and blemishes on its skin
+65,16,Semi Fresh Papaya,a photo of a green papaya with a net of thin brown scratch marks
+66,16,Semi Fresh Papaya,"a photo of a pear-shaped green papaya with faded, scarred skin"
+67,16,Semi Fresh Papaya,a photo of a green papaya with brown scab-like lines on its skin
+68,17,Rotten Papaya,a photo of a rotten papaya with white mold patches
+69,17,Rotten Papaya,a photo of a green papaya covered in white powdery mold
+70,17,Rotten Papaya,a photo of a green papaya with white and grey mold spots
+71,17,Rotten Papaya,a photo of a decayed brown papaya with white fungus
+72,18,Fresh Pineapple,a photo of a fresh pineapple with a green leafy crown
+73,18,Fresh Pineapple,a photo of a small fresh pineapple with a tall green crown
+74,18,Fresh Pineapple,a photo of a fresh pineapple crown with long bright green leaves
+75,18,Fresh Pineapple,a photo of a fresh pineapple with green-yellow scales
+76,19,Semi Fresh Pineapple,a photo of a ripe orange-brown pineapple with drying leaves
+77,19,Semi Fresh Pineapple,a photo of a pineapple turning golden brown with wilting crown leaves
+78,19,Semi Fresh Pineapple,a photo of a golden orange pineapple with green and brown leaves
+79,19,Semi Fresh Pineapple,a photo of an orange pineapple with some dry leaf tips
+80,20,Rotten Pineapple,"a photo of a rotten pineapple with dry, brown, dead leaves"
+81,20,Rotten Pineapple,a photo of a shriveled grey-brown decayed pineapple
+82,20,Rotten Pineapple,"a photo of a dried-out pineapple with grey, withered leaves"
+83,20,Rotten Pineapple,a photo of a rotten pineapple with grey-brown scales and dead leaves
+84,21,Fresh Tomato,a photo of a fresh orange-red tomato
+85,21,Fresh Tomato,a photo of a fresh orange and red tomato with a green stem
+86,21,Fresh Tomato,a photo of a fresh firm red tomato with a green calyx
+87,21,Fresh Tomato,a photo of a fresh smooth orange tomato
+88,22,Semi Fresh Tomato,"a photo of a red tomato with slightly sagging, soft skin"
+89,22,Semi Fresh Tomato,a photo of an orange-red tomato starting to lose firmness
+90,22,Semi Fresh Tomato,a photo of a tomato with a few small wrinkles near the top
+91,22,Semi Fresh Tomato,a photo of a slightly overripe orange-red tomato with dull skin
+92,23,Rotten Tomato,"a photo of a rotten tomato with wrinkled, collapsed skin"
+93,23,Rotten Tomato,a photo of a decaying tomato with black mold
+94,23,Rotten Tomato,a photo of a rotten tomato with dark green-black mold spots
+95,23,Rotten Tomato,"a photo of a squashed, rotting red tomato"
