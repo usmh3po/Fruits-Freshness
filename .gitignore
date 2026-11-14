@@ -1,6 +1,7 @@
 # Dataset (images are never committed)
 Processed Data/
 Removed Data/
+ood_data/
 *.jpg
 *.jpeg
 *.bmp

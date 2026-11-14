@@ -1,0 +1,44 @@
+{
+  "s4x40_reg": {
+    "family": "Original (v1.1)",
+    "seed": 42,
+    "temperature": 0.5784516334533691,
+    "val_ece_raw": 0.12665146729155977,
+    "val_ece_calibrated": 0.02418998673101494
+  },
+  "s4x40_reg_seed43": {
+    "family": "Original (v1.1)",
+    "seed": 43,
+    "temperature": 0.5813415050506592,
+    "val_ece_raw": 0.12312039120615213,
+    "val_ece_calibrated": 0.01639889814387791
+  },
+  "s4x40_reg_seed44": {
+    "family": "Original (v1.1)",
+    "seed": 44,
+    "temperature": 0.575570821762085,
+    "val_ece_raw": 0.12957403297853654,
+    "val_ece_calibrated": 0.01813515752439754
+  },
+  "s4x40_robust": {
+    "family": "Robust (v1.2)",
+    "seed": 42,
+    "temperature": 0.5500767230987549,
+    "val_ece_raw": 0.12799361268222562,
+    "val_ece_calibrated": 0.020151785078861693
+  },
+  "s4x40_robust_seed43": {
+    "family": "Robust (v1.2)",
+    "seed": 43,
+    "temperature": 0.5763516426086426,
+    "val_ece_raw": 0.12070158075441347,
+    "val_ece_calibrated": 0.018509483942583584
+  },
+  "s4x40_robust_seed44": {
+    "family": "Robust (v1.2)",
+    "seed": 44,
+    "temperature": 0.61320561170578,
+    "val_ece_raw": 0.10970956795060316,
+    "val_ece_calibrated": 0.014174420600649967
+  }
+}

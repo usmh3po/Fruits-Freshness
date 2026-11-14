@@ -11,8 +11,16 @@ Image dataset of 8 fruits/vegetables at 3 freshness levels (24 classes), with th
 - **`summarize_runs.py`**: compares training runs and adds a zero-shot CLIP baseline.
 - **`benchmark_inference.py`**: FLOPs, latency (p50/p90), throughput, memory, and the effect of fp16
   and int8 quantization for a trained run (`runs/<run>/efficiency.json`).
+- **`stress_test.py`**: robustness tests (corruptions, feature loss, CIFAR-100 OOD images, class
+  rarity), written to `runs/<run>/stress/`. The rare-class model is trained with
+  `train.py ... --rare-class "Semi Fresh" --rare-share 0.1`.
+- **`corruptions.py`**, **`calibration.py`**: shared corruptions / training augmentation, and
+  temperature scaling, ECE and reliability diagrams.
+- **`adversarial.py`**, **`robustness_eval.py`**, **`robust_inference.py`**: robustness and security
+  evaluation of the original (v1.1) vs. robust (v1.2) model (see "4. Robustness" below).
 
-Results write-up: [reports/training_report.md](reports/training_report.md).
+Results write-up: [reports/training_report.md](reports/training_report.md),
+[reports/robustness_report.md](reports/robustness_report.md).
 
 ## Dataset
 
@@ -152,6 +160,30 @@ Writes to `runs/<run-name>/`:
 
 `summarize_runs.py` writes `runs/summary.csv` (one row per run), `runs/ablation_test.png` (test
 accuracy and F1 per run) and `runs/zero_shot_clip.json`.
+
+### 4. Robustness (original v1.1 vs. robust v1.2)
+
+The robust model adds training augmentation (noise, blur, JPEG, cutout, grayscale; `--augment`). Both
+are trained with three seeds on the same split (`--split-seed 42`). Needs CIFAR-100, which
+`stress_test.py` / `robustness_eval.py` download to `ood_data/` (not in the repo).
+
+```bash
+REG="--sentences-per-class 4 --per-sentence 40 --weight-decay 0.05 --dropout 0.5 --label-smoothing 0.2 --lr-stage2 3e-5 --split-seed 42"
+for s in 43 44; do python train.py $REG --seed $s --config-version v1.1 --run-name s4x40_reg_seed$s; done
+python train.py $REG --seed 42 --augment --config-version v1.2 --run-name s4x40_robust
+for s in 43 44; do python train.py $REG --seed $s --augment --config-version v1.2 --run-name s4x40_robust_seed$s; done
+
+python adversarial.py         # FGSM, PGD, transfer and patch attacks   -> runs/robustness/adversarial.csv
+python robustness_eval.py     # corruptions x 3 seeds, CIs, temperature scaling, plots
+python robust_inference.py    # quality check + CLIP OOD gate + abstention, latency, failure cases
+python adapt.py               # simulated camera drift -> replay fine-tune -> before/after metrics
+python feature_ood.py         # final online pipeline: Mahalanobis OOD score replaces the CLIP gate
+```
+
+Everything is written to `runs/robustness/`: `corruption_seeds.csv`, `corruption_summary.csv`,
+`temperatures.json`, `adversarial.csv`, `pipeline_results.csv`, `pipeline_thresholds.json`,
+`latency.csv`, `memory.json`, `failure_cases.csv`, and the plots `robustness_curves.png`,
+`adversarial_curves.png`, `reliability.png`, `confidence_histograms.png`, `failure_cases.png`.
 
 ## Notes
 

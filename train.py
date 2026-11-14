@@ -45,6 +45,7 @@ from sklearn.metrics import (accuracy_score, average_precision_score, confusion_
 from torchvision import models, transforms
 
 from clip_selection import select_round_robin
+from corruptions import augment
 from eda import FRESHNESS_ORDER, IMAGE_EXTS, parse_folder
 
 CONFIG_VERSION = "v1.0"
@@ -193,8 +194,12 @@ class GPUNormalize:
         self.mean = torch.tensor(IMAGENET_MEAN, device=device).view(1, 3, 1, 1)
         self.std = torch.tensor(IMAGENET_STD, device=device).view(1, 3, 1, 1)
 
-    def __call__(self, x_uint8):
-        return (x_uint8.float() / 255.0 - self.mean) / self.std
+    def __call__(self, x_uint8, corrupt=None, gen=None):
+        """uint8 -> [0, 1] -> optional corruption/augmentation (x, gen) -> ImageNet normalisation."""
+        x = x_uint8.float() / 255.0
+        if corrupt is not None:
+            x = corrupt(x, gen)
+        return (x - self.mean) / self.std
 
 
 def run_epoch(model, X, y_fresh, y_fruit, cfg, norm, device, optimizer=None, scaler=None, gen=None):
@@ -207,7 +212,7 @@ def run_epoch(model, X, y_fresh, y_fruit, cfg, norm, device, optimizer=None, sca
     probs, fruit_pred = [], []
     for i in range(0, len(X), cfg["batch_size"]):
         idx = order[i:i + cfg["batch_size"]]
-        x = norm(X[idx].to(device, non_blocking=True))
+        x = norm(X[idx].to(device, non_blocking=True), cfg.get("augment") if training else None, gen)
         yf, yr = y_fresh[idx].to(device), y_fruit[idx].to(device)
         with torch.set_grad_enabled(training), torch.autocast(device.type, enabled=cfg["amp"]):
             out_f, out_r = model(x)
@@ -336,7 +341,15 @@ def main():
     ap.add_argument("--fruit-loss-weight", type=float, default=0.5)
     ap.add_argument("--workers", type=int, default=8, help="threads for image loading")
     ap.add_argument("--config-version", default=CONFIG_VERSION)
+    ap.add_argument("--rare-class", default=None, choices=FRESHNESS_ORDER,
+                    help="stress test: subsample this freshness level after selection")
+    ap.add_argument("--rare-share", type=float, default=0.1, help="its share of the training set")
+    ap.add_argument("--augment", action="store_true",
+                    help="robustness augmentation: noise, blur, JPEG, cutout, grayscale (corruptions.augment)")
+    ap.add_argument("--split-seed", type=int, default=None,
+                    help="seed of the data split (default: --seed); fix it to compare training seeds")
     args = ap.parse_args()
+    split_seed = args.seed if args.split_seed is None else args.split_seed
 
     run_name = args.run_name or f"s{args.sentences_per_class}x{args.per_sentence}"
     data_dir, out = Path(args.data), Path(args.runs_dir) / run_name
@@ -348,7 +361,7 @@ def main():
     torch.manual_seed(args.seed)
 
     cfg = {
-        "version": args.config_version, "run_name": run_name, "seed": args.seed,
+        "version": args.config_version, "run_name": run_name, "seed": args.seed, "split_seed": split_seed,
         "model": "resnet18 (torchvision IMAGENET1K_V1)", "heads": "freshness (3) + fruit (8)",
         "input": "resize 256x256 -> center crop 224 -> ImageNet mean/std; no extra augmentation",
         "split": "70/15/15 of original photos per class, augmented copies follow their original",
@@ -359,17 +372,19 @@ def main():
         "max_epochs": args.max_epochs, "early_stopping": f"val freshness macro-F1, patience {args.patience}",
         "loss": "CE(freshness) + w * CE(fruit)", "fruit_loss_weight": args.fruit_loss_weight,
         "label_smoothing": args.label_smoothing, "dropout": args.dropout, "amp": device.type == "cuda",
+        "augmentation": ("p=0.1 grayscale, p=0.2 blur sigma 0.5-2, p=0.2 JPEG q20-80, p=0.3 cutout 5-30%, "
+                         "p=0.3 noise sigma 0.01-0.1" if args.augment else "none"),
         "environment": {"python": platform.python_version(), "torch": torch.__version__,
                         "device": torch.cuda.get_device_name(0) if device.type == "cuda" else "cpu"},
     }
 
     # 1. Split (saved once and reused by every run with the same seed)
-    split_path = Path(args.runs_dir) / f"split_seed{args.seed}.csv"
+    split_path = Path(args.runs_dir) / f"split_seed{split_seed}.csv"
     if split_path.exists():
         split_df = pd.read_csv(split_path)
     else:
         print("Building 70/15/15 split ...")
-        split_df = build_split(data_dir, args.seed)
+        split_df = build_split(data_dir, split_seed)
         split_df.to_csv(split_path, index=False)
     counts = split_df.groupby(["split", "is_augmented"]).size().unstack(fill_value=0)
     print("Split (original / augmented images):\n" + counts.to_string())
@@ -378,6 +393,12 @@ def main():
     sel, n_sent = select_training_images(split_df, Path(args.clip_dir) / "similarities.csv",
                                          Path(args.clip_dir) / "sentences.csv",
                                          args.sentences_per_class, args.per_sentence)
+    if args.rare_class:
+        # Class-rarity stress test: keep only enough images of one level to make it rare-share of the set
+        rare = sel["freshness"] == args.rare_class
+        n_keep = round((~rare).sum() * args.rare_share / (1 - args.rare_share))
+        sel = pd.concat([sel[~rare], sel[rare].sample(n_keep, random_state=args.seed)]).reset_index(drop=True)
+        cfg["selection"].update({"rare_class": args.rare_class, "rare_share": args.rare_share})
     sel.to_csv(out / "selection.csv", index=False)
     sel_prec = selection_precision(sel)
     (out / "selection_precision.json").write_text(json.dumps(sel_prec, indent=2))
@@ -405,7 +426,8 @@ def main():
     scaler = torch.amp.GradScaler(enabled=cfg["amp"])
     gen = torch.Generator().manual_seed(args.seed)
     run_cfg = {"batch_size": args.batch_size, "label_smoothing": args.label_smoothing,
-               "fruit_loss_weight": args.fruit_loss_weight, "amp": cfg["amp"]}
+               "fruit_loss_weight": args.fruit_loss_weight, "amp": cfg["amp"],
+               "augment": augment if args.augment else None}
     Xtr, ytr_f, ytr_r, _ = data["train"]
     Xva, yva_f, yva_r, _ = data["val"]
 

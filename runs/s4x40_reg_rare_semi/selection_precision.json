@@ -1,0 +1,169 @@
+{
+  "n_selected": 2892,
+  "precision_class": 0.6006224066390041,
+  "precision_freshness": 0.6625172890733056,
+  "precision_fruit": 0.8509681881051175,
+  "per_sentence_label": {
+    "Fresh Banana": {
+      "selected": 151,
+      "correct": 133,
+      "precision": 0.8808
+    },
+    "Fresh Bittermelon": {
+      "selected": 137,
+      "correct": 76,
+      "precision": 0.5547
+    },
+    "Fresh Cucumber": {
+      "selected": 149,
+      "correct": 139,
+      "precision": 0.9329
+    },
+    "Fresh Eggplant": {
+      "selected": 127,
+      "correct": 91,
+      "precision": 0.7165
+    },
+    "Fresh Orange": {
+      "selected": 126,
+      "correct": 100,
+      "precision": 0.7937
+    },
+    "Fresh Papaya": {
+      "selected": 121,
+      "correct": 103,
+      "precision": 0.8512
+    },
+    "Fresh Pineapple": {
+      "selected": 132,
+      "correct": 88,
+      "precision": 0.6667
+    },
+    "Fresh Tomato": {
+      "selected": 117,
+      "correct": 89,
+      "precision": 0.7607
+    },
+    "Rotten Banana": {
+      "selected": 126,
+      "correct": 86,
+      "precision": 0.6825
+    },
+    "Rotten Bittermelon": {
+      "selected": 127,
+      "correct": 106,
+      "precision": 0.8346
+    },
+    "Rotten Cucumber": {
+      "selected": 151,
+      "correct": 149,
+      "precision": 0.9868
+    },
+    "Rotten Eggplant": {
+      "selected": 144,
+      "correct": 99,
+      "precision": 0.6875
+    },
+    "Rotten Orange": {
+      "selected": 147,
+      "correct": 95,
+      "precision": 0.6463
+    },
+    "Rotten Papaya": {
+      "selected": 116,
+      "correct": 57,
+      "precision": 0.4914
+    },
+    "Rotten Pineapple": {
+      "selected": 125,
+      "correct": 116,
+      "precision": 0.928
+    },
+    "Rotten Tomato": {
+      "selected": 129,
+      "correct": 88,
+      "precision": 0.6822
+    },
+    "Semi Fresh Banana": {
+      "selected": 74,
+      "correct": 27,
+      "precision": 0.3649
+    },
+    "Semi Fresh Bittermelon": {
+      "selected": 88,
+      "correct": 11,
+      "precision": 0.125
+    },
+    "Semi Fresh Cucumber": {
+      "selected": 121,
+      "correct": 5,
+      "precision": 0.0413
+    },
+    "Semi Fresh Eggplant": {
+      "selected": 124,
+      "correct": 7,
+      "precision": 0.0565
+    },
+    "Semi Fresh Orange": {
+      "selected": 79,
+      "correct": 20,
+      "precision": 0.2532
+    },
+    "Semi Fresh Papaya": {
+      "selected": 83,
+      "correct": 18,
+      "precision": 0.2169
+    },
+    "Semi Fresh Pineapple": {
+      "selected": 72,
+      "correct": 18,
+      "precision": 0.25
+    },
+    "Semi Fresh Tomato": {
+      "selected": 126,
+      "correct": 16,
+      "precision": 0.127
+    }
+  },
+  "true_freshness_share": {
+    "Fresh": 0.4575,
+    "Rotten": 0.4426,
+    "Semi Fresh": 0.0999
+  },
+  "true_fruit_share": {
+    "Cucumber": 0.1885,
+    "Eggplant": 0.1345,
+    "Tomato": 0.1279,
+    "Banana": 0.1262,
+    "Pineapple": 0.1158,
+    "Orange": 0.11,
+    "Papaya": 0.1082,
+    "Bittermelon": 0.0889
+  },
+  "true_class_count": {
+    "Rotten Cucumber": 271,
+    "Fresh Cucumber": 248,
+    "Fresh Banana": 211,
+    "Rotten Pineapple": 194,
+    "Fresh Eggplant": 185,
+    "Fresh Papaya": 170,
+    "Fresh Tomato": 169,
+    "Rotten Tomato": 168,
+    "Rotten Eggplant": 157,
+    "Rotten Orange": 141,
+    "Rotten Bittermelon": 139,
+    "Fresh Orange": 138,
+    "Fresh Pineapple": 110,
+    "Rotten Banana": 107,
+    "Rotten Papaya": 103,
+    "Fresh Bittermelon": 92,
+    "Semi Fresh Banana": 47,
+    "Semi Fresh Eggplant": 47,
+    "Semi Fresh Papaya": 40,
+    "Semi Fresh Orange": 39,
+    "Semi Fresh Tomato": 33,
+    "Semi Fresh Pineapple": 31,
+    "Semi Fresh Bittermelon": 26,
+    "Semi Fresh Cucumber": 26
+  }
+}

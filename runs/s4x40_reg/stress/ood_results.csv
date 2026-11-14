@@ -1,0 +1,5 @@
+set,n,mean_confidence,rejected_share,share_conf_over_0.9,auroc_vs_clean_id,auroc_vs_32px_id,predicted_Fresh,predicted_Semi Fresh,predicted_Rotten
+In-distribution test (clean),2170,0.7579351,0.2023041474654378,,,,,,
+In-distribution test at 32px (resolution-matched),2170,0.661837,0.3972350230414747,,,,,,
+Unseen produce (CIFAR-100 apple/pear/pepper/mushroom),400,0.6190971,0.505,0.0275,0.7462523041474655,0.5798767281105991,0.43,0.0925,0.4775
+"Non-fruit objects (CIFAR-100, 1000 random)",1000,0.60660374,0.524,0.023,0.7634870967741935,0.6040880184331798,0.375,0.084,0.541

@@ -1,0 +1,9 @@
+{
+  "resnet18_params": 11182155,
+  "resnet18_fp32_mb": 42.65653610229492,
+  "clip_vit_b32_params": 151277313,
+  "clip_fp16_mb": 288.53857612609863,
+  "temperature_params": 1,
+  "model_only_bs64_peak_vram_mb": 631.7314453125,
+  "pipeline_bs64_peak_vram_mb": 668.482421875
+}
