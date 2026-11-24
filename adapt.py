@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from calibration import load_model, predict_logits
+from calibration import ece, fit_temperature, load_model, predict_logits
 from corruptions import blur, jpeg, noise
 from eda import FRESHNESS_ORDER
 from robust_inference import corrupt_set, time_fn
@@ -36,11 +36,13 @@ def labels(df):
             torch.tensor(df["fruit"].map(FRUITS.index).to_numpy()))
 
 
-def evaluate(model, X, y, device):
-    m = freshness_metrics(y, predict_logits(model, X, device).softmax(1).numpy())
+def evaluate(model, X, y, device, T=1.0):
+    """T: temperature fitted on the clean validation set (ece = after temperature scaling)."""
+    logits = predict_logits(model, X, device)
+    m = freshness_metrics(y, logits.softmax(1).numpy())
     return {"accuracy": m["accuracy"], "f1_macro": m["f1_macro"], "auroc": m["auroc_macro_ovr"],
             "recall_semi": m["per_class"]["Semi Fresh"]["recall"],
-            "rotten_to_fresh": m["confusion_matrix"][2][0]}
+            "rotten_to_fresh": m["confusion_matrix"][2][0], "ece": ece((logits / T).softmax(1).numpy(), y)}
 
 
 def main():
@@ -54,6 +56,7 @@ def main():
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--out-file", default="adaptation.csv", help="file name under runs/robustness/")
     args = ap.parse_args()
     runs_dir, data_dir = Path(args.runs_dir), Path(args.data)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -64,6 +67,9 @@ def main():
     Xt = load_images(data_dir, test["path"], args.workers)
     yt = test["freshness"].map(FRESHNESS_ORDER.index).to_numpy()
     Xt_drift = corrupt_set(Xt, camera_drift, args.seed)
+    val = split[split["split"] == "val"]
+    Xv, yv = load_images(data_dir, val["path"], args.workers), val["freshness"].map(FRESHNESS_ORDER.index).to_numpy()
+    temperature = lambda m: fit_temperature(predict_logits(m, Xv, device), yv)
 
     rows = []
     for run in args.runs:
@@ -76,7 +82,8 @@ def main():
         yf, yr = [torch.cat(t) for t in zip(labels(new), labels(replay))]
 
         model = load_model(runs_dir / run / "best.pt", device)
-        before = {"clean": evaluate(model, Xt, yt, device), "drift": evaluate(model, Xt_drift, yt, device)}
+        T = temperature(model)
+        before = {"clean": evaluate(model, Xt, yt, device, T), "drift": evaluate(model, Xt_drift, yt, device, T)}
 
         adapted = copy.deepcopy(model)
         params = set_stage(adapted, 2)
@@ -90,7 +97,8 @@ def main():
             run_epoch(adapted, X, yf, yr, cfg, GPUNormalize(device), device, opt, scaler, gen)
         adapt_time = time.perf_counter() - t0
         adapted.eval()
-        after = {"clean": evaluate(adapted, Xt, yt, device), "drift": evaluate(adapted, Xt_drift, yt, device)}
+        T = temperature(adapted)
+        after = {"clean": evaluate(adapted, Xt, yt, device, T), "drift": evaluate(adapted, Xt_drift, yt, device, T)}
 
         lat = {}
         for name, m in [("before", model), ("after", adapted)]:
@@ -105,7 +113,7 @@ def main():
         print(f"{run}: drift acc {before['drift']['accuracy']:.3f} -> {after['drift']['accuracy']:.3f}, "
               f"clean acc {before['clean']['accuracy']:.3f} -> {after['clean']['accuracy']:.3f} ({adapt_time:.0f}s)")
     out = pd.DataFrame(rows)
-    out.to_csv(runs_dir / "robustness" / "adaptation.csv", index=False)
+    out.to_csv(runs_dir / "robustness" / args.out_file, index=False)
     print(out.to_string(index=False, float_format=lambda v: f"{v:.3f}"))
 
 

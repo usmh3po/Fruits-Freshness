@@ -1,0 +1,138 @@
+{
+  "run": "swin_t_seed43",
+  "selection_precision": {
+    "n_selected": 3840,
+    "precision_class": 0.5669270833333333,
+    "precision_freshness": 0.6325520833333333,
+    "precision_fruit": 0.84296875
+  },
+  "val": {
+    "accuracy": 0.9152298850574713,
+    "f1_macro": 0.9142382981715492,
+    "f1_micro": 0.9152298850574713,
+    "auroc_macro_ovr": 0.9795828628167841,
+    "pr_auc_macro": 0.9622672037508831,
+    "per_class": {
+      "Fresh": {
+        "precision": 0.9301675977653632,
+        "recall": 0.9446808510638298,
+        "f1": 0.9373680506685432,
+        "support": 705
+      },
+      "Semi Fresh": {
+        "precision": 0.8919753086419753,
+        "recall": 0.857566765578635,
+        "f1": 0.8744326777609682,
+        "support": 674
+      },
+      "Rotten": {
+        "precision": 0.9212707182320442,
+        "recall": 0.9407616361071932,
+        "f1": 0.9309141660851361,
+        "support": 709
+      }
+    },
+    "confusion_matrix": [
+      [
+        666,
+        32,
+        7
+      ],
+      [
+        46,
+        578,
+        50
+      ],
+      [
+        4,
+        38,
+        667
+      ]
+    ],
+    "accuracy_per_fruit": {
+      "Banana": 0.9163346613545816,
+      "Bittermelon": 0.907258064516129,
+      "Cucumber": 0.9117647058823529,
+      "Eggplant": 0.8566037735849057,
+      "Orange": 0.95,
+      "Papaya": 0.9259259259259259,
+      "Pineapple": 0.9461538461538461,
+      "Tomato": 0.9083969465648855
+    },
+    "fruit_head_accuracy": 0.9894636015325671,
+    "accuracy_originals_only": 0.9227799227799228
+  },
+  "test": {
+    "accuracy": 0.8783410138248848,
+    "f1_macro": 0.8768240386083658,
+    "f1_micro": 0.8783410138248848,
+    "auroc_macro_ovr": 0.9670157953871367,
+    "pr_auc_macro": 0.9428141172788312,
+    "per_class": {
+      "Fresh": {
+        "precision": 0.9096045197740112,
+        "recall": 0.8994413407821229,
+        "f1": 0.9044943820224719,
+        "support": 716
+      },
+      "Semi Fresh": {
+        "precision": 0.8502269288956127,
+        "recall": 0.790436005625879,
+        "f1": 0.8192419825072886,
+        "support": 711
+      },
+      "Rotten": {
+        "precision": 0.8739076154806492,
+        "recall": 0.9421265141318977,
+        "f1": 0.9067357512953368,
+        "support": 743
+      }
+    },
+    "confusion_matrix": [
+      [
+        644,
+        63,
+        9
+      ],
+      [
+        57,
+        562,
+        92
+      ],
+      [
+        7,
+        36,
+        700
+      ]
+    ],
+    "accuracy_per_fruit": {
+      "Banana": 0.9263157894736842,
+      "Bittermelon": 0.812,
+      "Cucumber": 0.8666666666666667,
+      "Eggplant": 0.8397212543554007,
+      "Orange": 0.9442379182156134,
+      "Papaya": 0.8720538720538721,
+      "Pineapple": 0.8773234200743495,
+      "Tomato": 0.8837209302325582
+    },
+    "fruit_head_accuracy": 0.9981566820276497,
+    "accuracy_originals_only": 0.9039692701664532
+  },
+  "efficiency": {
+    "train_time_s": 440.965137399995,
+    "epochs_run": 29,
+    "best_epoch": 24,
+    "mean_epoch_time_s": 15.202196727584091,
+    "train_images_per_s": 252.5369707378624,
+    "peak_gpu_memory_mb": 758.056640625,
+    "params_total": 27527813,
+    "params_trainable_stage2": 14193851,
+    "model_size_mb": 105.27753257751465,
+    "cuda_batch1_latency_ms": 46.76699999254197,
+    "cuda_batch1_throughput_img_s": 21.38259884447307,
+    "cuda_batch64_latency_ms": 210.534749989165,
+    "cuda_batch64_throughput_img_s": 303.9878215035461,
+    "cpu_batch1_latency_ms": 48.01389999920502,
+    "cpu_batch1_throughput_img_s": 20.82730209411352
+  }
+}

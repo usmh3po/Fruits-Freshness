@@ -1,0 +1,16 @@
+{
+  "version": "v1.3.0",
+  "parent": "s4x40_robust (v1.2)",
+  "period": "T0 clean",
+  "method": "class-balanced replay, layer4 + heads",
+  "epochs": 5,
+  "lr": 0.0001,
+  "batch_size": 32,
+  "n_new": 600,
+  "n_replay": 600,
+  "buffer_per_class": 333,
+  "augmentation": "corruptions.augment (v1.2)",
+  "temperature": 0.5500767230987549,
+  "ood_threshold": 4110.89013671875,
+  "new_data_md5": "d41d8cd98f00b204e9800998ecf8427e"
+}

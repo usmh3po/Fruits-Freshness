@@ -1,0 +1,13 @@
+setup,label,colour,seed,accuracy,f1_macro
+"ResNet-18, 1 x 160",ResNet-18 | 1 sentence x 160 | (3 seeds),#a6bddb,42,0.8368663594470046,0.8353642920072941
+"ResNet-18, 1 x 160",ResNet-18 | 1 sentence x 160 | (3 seeds),#a6bddb,43,0.8516129032258064,0.8492355559495021
+"ResNet-18, 1 x 160",ResNet-18 | 1 sentence x 160 | (3 seeds),#a6bddb,44,0.8566820276497696,0.8530659245511255
+"ResNet-18, 2 x 80",ResNet-18 | 2 sentences x 80 | (3 seeds),#74a9cf,42,0.8410138248847926,0.8380595108090386
+"ResNet-18, 2 x 80",ResNet-18 | 2 sentences x 80 | (3 seeds),#74a9cf,43,0.847926267281106,0.8459415331839525
+"ResNet-18, 2 x 80",ResNet-18 | 2 sentences x 80 | (3 seeds),#74a9cf,44,0.8576036866359447,0.8554450836008769
+ResNet-18 (CNN),ResNet-18 | 4 sentences x 40 | (3 seeds),#4c72b0,42,0.8649769585253456,0.8614923750869897
+ResNet-18 (CNN),ResNet-18 | 4 sentences x 40 | (3 seeds),#4c72b0,43,0.8511520737327188,0.8488327892174112
+ResNet-18 (CNN),ResNet-18 | 4 sentences x 40 | (3 seeds),#4c72b0,44,0.8516129032258064,0.8492742355678358
+Swin-T (transformer),Swin-T | 4 sentences x 40 | (3 seeds),#dd8452,42,0.8783410138248848,0.8772362176634906
+Swin-T (transformer),Swin-T | 4 sentences x 40 | (3 seeds),#dd8452,43,0.8783410138248848,0.8768240386083658
+Swin-T (transformer),Swin-T | 4 sentences x 40 | (3 seeds),#dd8452,44,0.8778801843317973,0.8761559572619366

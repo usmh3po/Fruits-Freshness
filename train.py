@@ -148,14 +148,25 @@ def load_images(data_dir, paths, workers):
         return torch.stack(list(pool.map(load, paths)))
 
 
-class FreshnessNet(nn.Module):
-    """ResNet-18 backbone with a freshness head (main task) and a fruit head (auxiliary task)."""
+BACKBONES = {"resnet18": "resnet18 (torchvision IMAGENET1K_V1)", "swin_t": "swin_t (torchvision IMAGENET1K_V1)"}
 
-    def __init__(self, dropout):
+
+class FreshnessNet(nn.Module):
+    """Pretrained backbone (ResNet-18 or Swin-T) with a freshness head (main task) and a fruit head
+    (auxiliary task)."""
+
+    def __init__(self, dropout, backbone="resnet18"):
         super().__init__()
-        self.backbone = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
-        feat = self.backbone.fc.in_features  # 512
-        self.backbone.fc = nn.Identity()
+        if backbone == "resnet18":
+            self.backbone = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+            feat = self.backbone.fc.in_features  # 512
+            self.backbone.fc = nn.Identity()
+            self.last_stage = [self.backbone.layer4]
+        else:  # Swin-T: features[7] is the last of its four stages, the counterpart of layer4
+            self.backbone = models.swin_t(weights=models.Swin_T_Weights.IMAGENET1K_V1)
+            feat = self.backbone.head.in_features  # 768
+            self.backbone.head = nn.Identity()
+            self.last_stage = [self.backbone.features[7], self.backbone.norm]
         self.fresh_head = nn.Sequential(nn.Dropout(dropout), nn.Linear(feat, len(FRESHNESS_ORDER)))
         self.fruit_head = nn.Sequential(nn.Dropout(dropout), nn.Linear(feat, len(FRUITS)))
 
@@ -168,11 +179,11 @@ class FreshnessNet(nn.Module):
 
 
 def set_stage(model, stage):
-    """Stage 1: only the heads train. Stage 2: layer4 + heads train. Frozen BatchNorm layers stay
-    in eval mode so their ImageNet statistics are kept."""
+    """Stage 1: only the heads train. Stage 2: the last backbone stage (layer4 / last Swin stage) + heads
+    train. Frozen BatchNorm layers stay in eval mode so their ImageNet statistics are kept."""
     for p in model.parameters():
         p.requires_grad = False
-    trainable = model.heads() + ([model.backbone.layer4] if stage == 2 else [])
+    trainable = model.heads() + (model.last_stage if stage == 2 else [])
     for m in trainable:
         for p in m.parameters():
             p.requires_grad = True
@@ -184,7 +195,8 @@ def train_mode(model, stage):
     for h in model.heads():
         h.train()
     if stage == 2:
-        model.backbone.layer4.train()
+        for m in model.last_stage:
+            m.train()
 
 
 # ---------------------------------------------------------------- train / evaluate
@@ -348,6 +360,7 @@ def main():
                     help="robustness augmentation: noise, blur, JPEG, cutout, grayscale (corruptions.augment)")
     ap.add_argument("--split-seed", type=int, default=None,
                     help="seed of the data split (default: --seed); fix it to compare training seeds")
+    ap.add_argument("--backbone", default="resnet18", choices=list(BACKBONES))
     args = ap.parse_args()
     split_seed = args.seed if args.split_seed is None else args.split_seed
 
@@ -362,13 +375,13 @@ def main():
 
     cfg = {
         "version": args.config_version, "run_name": run_name, "seed": args.seed, "split_seed": split_seed,
-        "model": "resnet18 (torchvision IMAGENET1K_V1)", "heads": "freshness (3) + fruit (8)",
+        "model": BACKBONES[args.backbone], "heads": "freshness (3) + fruit (8)",
         "input": "resize 256x256 -> center crop 224 -> ImageNet mean/std; no extra augmentation",
         "split": "70/15/15 of original photos per class, augmented copies follow their original",
         "selection": {"sentences_per_class": args.sentences_per_class, "per_sentence": args.per_sentence},
         "optimizer": "AdamW", "weight_decay": args.weight_decay, "batch_size": args.batch_size,
         "stage1": {"trainable": "heads", "epochs": args.stage1_epochs, "lr": args.lr_stage1},
-        "stage2": {"trainable": "layer4 + heads", "lr": args.lr_stage2, "schedule": "cosine"},
+        "stage2": {"trainable": "last backbone stage + heads", "lr": args.lr_stage2, "schedule": "cosine"},
         "max_epochs": args.max_epochs, "early_stopping": f"val freshness macro-F1, patience {args.patience}",
         "loss": "CE(freshness) + w * CE(fruit)", "fruit_loss_weight": args.fruit_loss_weight,
         "label_smoothing": args.label_smoothing, "dropout": args.dropout, "amp": device.type == "cuda",
@@ -421,7 +434,7 @@ def main():
         print(f"Loaded {name}: {len(X)} images ({time.perf_counter() - t:.1f}s)")
 
     # 4. Training
-    model = FreshnessNet(args.dropout).to(device)
+    model = FreshnessNet(args.dropout, args.backbone).to(device)
     norm = GPUNormalize(device)
     scaler = torch.amp.GradScaler(enabled=cfg["amp"])
     gen = torch.Generator().manual_seed(args.seed)
@@ -497,7 +510,7 @@ def main():
         "mean_epoch_time_s": float(hist["epoch_time_s"].mean()),
         "train_images_per_s": len(Xtr) * len(hist) / train_time,
         "peak_gpu_memory_mb": peak_mem, "params_total": n_params,
-        "params_trainable_stage2": sum(p.numel() for m in model.heads() + [model.backbone.layer4] for p in m.parameters()),
+        "params_trainable_stage2": sum(p.numel() for m in model.heads() + model.last_stage for p in m.parameters()),
         "model_size_mb": (out / "best.pt").stat().st_size / 2**20,
         **measure_inference(model, device),
     }

@@ -1,0 +1,301 @@
+path,human_label,selected_as,model_confidence,was_flagged
+Fresh Tomato(1-10)/IMG_20251126_192416202_HDR.jpg,Fresh,least confident,0.40384158,True
+Rotten Orange(20-35)/IMG-20251207-WA0010.jpg,Rotten,least confident,0.41405478,True
+Semi Fresh Cucumber(6-12)/IMG_20260125_005533.jpg,Semi Fresh,least confident,0.41510484,True
+Semi Fresh Bittermelon ( 3-5)/aug_90_IMG_20260116_025828.jpg,Semi Fresh,least confident,0.41687563,True
+Rotten eggplant(8-15)/aug_145_IMG_20251115_122013387_HDR_AE.jpg,Rotten,least confident,0.4216596,True
+Rotten Tomato(24-35)/aug_201_IMG_20251127_191654789_HDR.jpg,Rotten,least confident,0.43653324,True
+Semi fresh banana(4-7)/aug_261_IMG_20251108_121204884_HDR_AE.jpg,Semi Fresh,least confident,0.45109913,True
+Semi fresh Pineapple (15-25)/aug_431_IMG-20251205-WA0012.jpg,Semi Fresh,least confident,0.45266244,True
+Semi Fresh Papaya(4-7)/IMG_20260123_013738.jpg,Semi Fresh,least confident,0.45387802,True
+Semi fresh Tomato(10-24)/aug_51_IMG_20251112_113745665_HDR_AE.jpg,Semi Fresh,least confident,0.471076,True
+Semi Fresh Cucumber(6-12)/IMG_20260212_155559.jpg,Semi Fresh,least confident,0.4816394,True
+Semi fresh Tomato(10-24)/IMG_20251130_181906534_HDR.jpg,Semi Fresh,least confident,0.48744586,True
+Rotten Tomato(24-35)/aug_275_IMG_20251201_133219412_HDR.jpg,Rotten,least confident,0.49094456,True
+Rotten Papaya(7-12)/aug_103_IMG_20260130_163550.jpg,Rotten,least confident,0.49112964,True
+Rotten Bittermelon(5-8)/IMG_20260125_005650.jpg,Rotten,least confident,0.49359676,True
+Semi Fresh Bittermelon ( 3-5)/aug_369_IMG_20260122_003126.jpg,Semi Fresh,least confident,0.49642184,True
+Semi Fresh Bittermelon ( 3-5)/aug_11_IMG_20260122_003316.jpg,Semi Fresh,least confident,0.4979267,True
+Semi fresh Pineapple (15-25)/aug_85_IMG_20251117_141238562_HDR_AE.jpg,Semi Fresh,least confident,0.5003607,True
+Semi fresh Tomato(10-24)/IMG_20251116_220056529_HDR.jpg,Semi Fresh,least confident,0.5009576,True
+Fresh Bittermelon(1-3)/IMG_20251121_081644.jpg,Fresh,least confident,0.50098616,True
+Semi Fresh Papaya(4-7)/aug_47_IMG_20251031_164031.jpg,Semi Fresh,least confident,0.5024753,True
+Fresh Banana(1-4)/aug_54_IMG_20251119_201217560_HDR.jpg,Fresh,least confident,0.50298506,True
+Semi_Fresh eggplant(4-8)/IMG_20251130_182049359_HDR.jpg,Semi Fresh,least confident,0.5049568,True
+Fresh Bittermelon(1-3)/aug_323_IMG_20251117_155545.jpg,Fresh,least confident,0.50896174,True
+Fresh Orange(1-9)/aug_317_IMG-20251121-WA0021.jpg,Fresh,least confident,0.51025224,True
+Rotten Tomato(24-35)/aug_173_IMG-20260210-WA0017.jpg,Rotten,least confident,0.5128579,True
+Semi fresh Orange(9-20)/IMG_20251118_165621849_HDR.jpg,Semi Fresh,least confident,0.5144631,True
+Semi fresh Tomato(10-24)/aug_47_IMG_20251115_121609496_HDR_AE.jpg,Semi Fresh,least confident,0.5147539,True
+Semi Fresh Cucumber(6-12)/aug_288_IMG_20260212_155613_1.jpg,Semi Fresh,least confident,0.51651114,True
+Semi fresh Tomato(10-24)/IMG_20260123_182249333_HDR.jpg,Semi Fresh,least confident,0.5166234,True
+Semi fresh Pineapple (15-25)/aug_373_IMG-20251205-WA0034.jpg,Semi Fresh,least confident,0.5199977,True
+Rotten Papaya(7-12)/aug_170_IMG_20260123_013557.jpg,Rotten,least confident,0.52296257,True
+Semi fresh Tomato(10-24)/aug_7_IMG_20251201_185925132_HDR.jpg,Semi Fresh,least confident,0.52523714,True
+Semi Fresh Papaya(4-7)/aug_250_IMG_20251031_164031.jpg,Semi Fresh,least confident,0.5253165,True
+Rotten Orange(20-35)/aug_209_IMG-20251230-WA0033.jpg,Rotten,least confident,0.525623,True
+Fresh Tomato(1-10)/IMG_20251127_191935005_HDR.jpg,Fresh,least confident,0.5273648,True
+Fresh Papaya(1-4)/aug_348_IMG_20251027_171217.jpg,Fresh,least confident,0.527749,True
+Fresh Papaya(1-4)/aug_212_IMG_20260116_030702.jpg,Fresh,least confident,0.53185475,True
+Semi fresh Pineapple (15-25)/IMG_20251117_141318994_HDR_AE.jpg,Semi Fresh,least confident,0.5371876,True
+Semi Fresh Papaya(4-7)/aug_104_IMG_20260214_025258.jpg,Semi Fresh,least confident,0.5393612,True
+Semi Fresh Bittermelon ( 3-5)/aug_461_IMG_20251123_013047.jpg,Semi Fresh,least confident,0.54496264,True
+Rotten eggplant(8-15)/aug_365_IMG_20251125_211439509_HDR.jpg,Rotten,least confident,0.5484198,True
+Semi fresh Pineapple (15-25)/aug_211_IMG_20251121_144742251_HDR_AE.jpg,Semi Fresh,least confident,0.560634,True
+Rotten banana(7-13)/IMG_20251113_123338760_HDR_AE.jpg,Rotten,least confident,0.56538844,True
+Semi fresh Pineapple (15-25)/aug_338_IMG-20251205-WA0026.jpg,Semi Fresh,least confident,0.5668697,True
+Rotten banana(7-13)/aug_59_IMG_20251112_112646074_HDR_AE.jpg,Rotten,least confident,0.5700401,True
+Fresh pineapple(1-15)/aug_236_IMG_20251110_094523733_HDR_AE.jpg,Fresh,least confident,0.5798753,True
+Semi Fresh Bittermelon ( 3-5)/IMG_20260120_004811.jpg,Semi Fresh,least confident,0.59231675,True
+Semi fresh banana(4-7)/aug_117_IMG_20251122_112726127_HDR_AE.jpg,Semi Fresh,least confident,0.60196555,True
+Rotten eggplant(8-15)/aug_224_IMG_20251124_191919760_HDR.jpg,Rotten,least confident,0.6024463,True
+Rotten Bittermelon(5-8)/IMG_20251029_095354.jpg,Rotten,least confident,0.60531247,True
+Fresh Banana(1-4)/aug_94_IMG_20251119_201553830_HDR.jpg,Fresh,least confident,0.6071664,True
+Semi fresh banana(4-7)/aug_278_IMG_20251106_155417591_HDR_AE.jpg,Semi Fresh,least confident,0.6192467,True
+Rotten banana(7-13)/aug_157_IMG_20251201_132639625_HDR.jpg,Rotten,least confident,0.6215659,True
+Rotten banana(7-13)/aug_94_IMG_20251115_121044635_HDR_AE.jpg,Rotten,least confident,0.6306328,True
+Rotten Pineapple(25-35)/aug_304_IMG-20260130-WA0119.jpg,Rotten,least confident,0.63064235,True
+Rotten banana(7-13)/IMG_20251127_190751614_HDR.jpg,Rotten,least confident,0.63585854,True
+Semi Fresh Papaya(4-7)/aug_205_IMG_20260123_013740.jpg,Semi Fresh,least confident,0.63882107,True
+Rotten Pineapple(25-35)/IMG-20251215-WA0053.jpg,Rotten,least confident,0.64087313,True
+Semi_Fresh eggplant(4-8)/aug_143_IMG_20251123_110615106_HDR_AE.jpg,Semi Fresh,least confident,0.65406436,True
+Rotten eggplant(8-15)/aug_98_IMG_20251126_194111802_HDR.jpg,Rotten,least confident,0.6556974,True
+Semi Fresh Papaya(4-7)/aug_107_IMG_20251031_164000.jpg,Semi Fresh,least confident,0.65769625,True
+Rotten eggplant(8-15)/IMG_20251115_122018484_HDR_AE.jpg,Rotten,least confident,0.6626971,True
+Semi_Fresh eggplant(4-8)/IMG_20251123_110443809_HDR_AE.jpg,Semi Fresh,least confident,0.6651287,True
+Semi Fresh Papaya(4-7)/aug_513_IMG_20251031_164000.jpg,Semi Fresh,least confident,0.6768447,True
+Semi fresh Pineapple (15-25)/aug_444_IMG-20251205-WA0037.jpg,Semi Fresh,least confident,0.6906201,True
+Rotten Bittermelon(5-8)/IMG_20251029_095337.jpg,Rotten,least confident,0.6971601,True
+Semi fresh Pineapple (15-25)/IMG_20251121_144742251_HDR_AE.jpg,Semi Fresh,least confident,0.70250416,True
+Semi Fresh Bittermelon ( 3-5)/IMG_20260116_025834.jpg,Semi Fresh,least confident,0.70266265,True
+Semi Fresh Bittermelon ( 3-5)/aug_217_IMG_20260122_003131.jpg,Semi Fresh,least confident,0.716524,True
+Rotten banana(7-13)/IMG_20251112_112614226_HDR_AE.jpg,Rotten,least confident,0.72248656,True
+Semi Fresh Papaya(4-7)/aug_315_IMG_20251031_164014.jpg,Semi Fresh,least confident,0.7262846,True
+Rotten banana(7-13)/IMG_20251126_190348843_HDR.jpg,Rotten,least confident,0.7306946,True
+Rotten Pineapple(25-35)/aug_50_IMG-20251215-WA0053.jpg,Rotten,least confident,0.733106,True
+Rotten eggplant(8-15)/aug_323_IMG_20251123_222318300_HDR.jpg,Rotten,least confident,0.73314726,True
+Rotten banana(7-13)/aug_247_IMG_20251111_142358166_HDR_AE.jpg,Rotten,least confident,0.73416716,True
+Rotten Pineapple(25-35)/aug_155_IMG_20251126_194210600_HDR.jpg,Rotten,least confident,0.7345492,True
+Semi fresh Pineapple (15-25)/aug_434_IMG_20251117_141318994_HDR_AE.jpg,Semi Fresh,least confident,0.739155,True
+Semi Fresh Papaya(4-7)/IMG_20251031_164000.jpg,Semi Fresh,least confident,0.7428527,True
+Semi fresh banana(4-7)/aug_139_IMG_20251123_105941014_HDR_AE.jpg,Semi Fresh,least confident,0.7459507,True
+Rotten banana(7-13)/aug_81_IMG_20260124_113256403_HDR_AE.jpg,Rotten,least confident,0.74792516,True
+Fresh eggplant(1-4)/aug_124_IMG_20251121_143511295_HDR_AE.jpg,Fresh,least confident,0.7551118,True
+Rotten Tomato(24-35)/IMG_20251201_133201953_HDR.jpg,Rotten,least confident,0.7594536,True
+Rotten Pineapple(25-35)/IMG_20251201_133526793_HDR.jpg,Rotten,least confident,0.76058453,True
+Rotten banana(7-13)/aug_10_IMG_20251111_142439028_HDR_AE.jpg,Rotten,least confident,0.77049524,True
+Fresh pineapple(1-15)/IMG_20251102_081345249_HDR_AE.jpg,Fresh,least confident,0.7709554,True
+Rotten eggplant(8-15)/IMG_20251126_194106823_HDR.jpg,Rotten,least confident,0.771626,True
+Rotten Bittermelon(5-8)/IMG_20251031_164254.jpg,Rotten,least confident,0.77204424,True
+Rotten banana(7-13)/aug_149_IMG_20251201_132639625_HDR.jpg,Rotten,least confident,0.7863566,True
+Semi fresh banana(4-7)/IMG_20251107_113703366_HDR_AE.jpg,Semi Fresh,least confident,0.7959949,True
+Rotten banana(7-13)/aug_139_IMG_20260124_113323542_HDR_AE.jpg,Rotten,least confident,0.8025408,True
+Rotten Papaya(7-12)/IMG_20260130_163416.jpg,Rotten,least confident,0.80995345,True
+Semi Fresh Cucumber(6-12)/aug_104_IMG_20260212_155337.jpg,Semi Fresh,least confident,0.810249,True
+Semi fresh Orange(9-20)/IMG_20251121_144441298_HDR_AE.jpg,Semi Fresh,least confident,0.81252426,True
+Fresh eggplant(1-4)/aug_114_IMG_20251127_192918110_HDR.jpg,Fresh,least confident,0.81894666,True
+Semi Fresh Bittermelon ( 3-5)/aug_149_IMG_20260120_004745.jpg,Semi Fresh,least confident,0.82247883,True
+Rotten Pineapple(25-35)/IMG_20251203_101235641_HDR.jpg,Rotten,least confident,0.82345414,True
+Semi Fresh Bittermelon ( 3-5)/aug_314_IMG_20260120_004728.jpg,Semi Fresh,least confident,0.82349324,True
+Rotten Bittermelon(5-8)/aug_263_IMG_20251029_095308.jpg,Rotten,least confident,0.8333063,True
+Semi Fresh Bittermelon ( 3-5)/aug_330_IMG_20260120_004811.jpg,Semi Fresh,least confident,0.834338,True
+Semi fresh banana(4-7)/aug_176_IMG_20251123_105654611_HDR_AE.jpg,Semi Fresh,least confident,0.83575636,True
+Fresh pineapple(1-15)/aug_86_IMG-20251127-WA0010.jpg,Fresh,least confident,0.83941257,True
+Semi fresh Pineapple (15-25)/aug_401_IMG_20251122_211235094_HDR.jpg,Semi Fresh,least confident,0.8408801,True
+Rotten Papaya(7-12)/aug_68_IMG_20260130_163400.jpg,Rotten,least confident,0.8441416,True
+Semi fresh Pineapple (15-25)/aug_421_IMG_20251121_144734349_HDR_AE.jpg,Semi Fresh,least confident,0.84949505,True
+Rotten banana(7-13)/IMG_20251109_111901655_HDR_AE.jpg,Rotten,least confident,0.85729074,True
+Rotten banana(7-13)/IMG_20251114_213847382_HDR.jpg,Rotten,least confident,0.85828465,True
+Rotten banana(7-13)/aug_1_IMG_20251112_112646074_HDR_AE.jpg,Rotten,least confident,0.8623702,True
+Rotten Cucumber(12-20)/aug_46_IMG_20260209_011504.jpg,Rotten,least confident,0.8663159,True
+Rotten Bittermelon(5-8)/aug_175_IMG_20251202_020001.jpg,Rotten,least confident,0.8667899,True
+Semi Fresh Cucumber(6-12)/aug_335_IMG_20260120_005132.jpg,Semi Fresh,least confident,0.8679842,True
+Semi Fresh Cucumber(6-12)/aug_35_IMG_20260125_005606.jpg,Semi Fresh,least confident,0.8683587,True
+Semi Fresh Papaya(4-7)/aug_129_IMG_20260125_005125.jpg,Semi Fresh,least confident,0.8737126,True
+Semi Fresh Papaya(4-7)/aug_531_IMG_20251031_164000.jpg,Semi Fresh,least confident,0.87511915,True
+Rotten Pineapple(25-35)/aug_319_IMG-20260128-WA0064.jpg,Rotten,least confident,0.87845135,True
+Rotten banana(7-13)/IMG_20251115_121136075_HDR_AE.jpg,Rotten,least confident,0.879613,True
+Semi fresh Pineapple (15-25)/IMG_20251122_211235094_HDR.jpg,Semi Fresh,least confident,0.8797623,True
+Fresh Bittermelon(1-3)/aug_377_IMG_20260116_030256.jpg,Fresh,least confident,0.8811622,True
+Semi fresh Pineapple (15-25)/aug_54_IMG_20251120_204748013_HDR.jpg,Semi Fresh,least confident,0.881972,True
+Semi_Fresh eggplant(4-8)/IMG_20251123_110615106_HDR_AE.jpg,Semi Fresh,least confident,0.8849581,True
+Fresh eggplant(1-4)/aug_113_IMG_20251107_114518825_HDR_AE.jpg,Fresh,least confident,0.88743275,True
+Rotten Papaya(7-12)/IMG_20260123_013557_1.jpg,Rotten,least confident,0.89196557,True
+Rotten eggplant(8-15)/aug_151_IMG_20251118_165248030_HDR.jpg,Rotten,least confident,0.89544636,True
+Semi Fresh Papaya(4-7)/aug_386_IMG_20251031_164000.jpg,Semi Fresh,least confident,0.9038739,True
+Semi_Fresh eggplant(4-8)/aug_313_IMG_20251125_212324430_HDR.jpg,Semi Fresh,least confident,0.9053951,True
+Rotten Orange(20-35)/aug_385_IMG-20260128-WA0001.jpg,Rotten,least confident,0.9087388,True
+Rotten eggplant(8-15)/IMG_20251201_133332980_HDR.jpg,Rotten,least confident,0.9094594,True
+Fresh pineapple(1-15)/aug_364_pineapple(4).jpeg,Fresh,least confident,0.9119543,True
+Semi Fresh Papaya(4-7)/aug_334_IMG_20260214_025259.jpg,Semi Fresh,least confident,0.91295666,True
+Rotten Bittermelon(5-8)/IMG_20260125_005856.jpg,Rotten,least confident,0.9130535,True
+Rotten Pineapple(25-35)/aug_48_IMG-20260128-WA0061.jpg,Rotten,least confident,0.91470444,True
+Rotten Bittermelon(5-8)/IMG_20260120_004936.jpg,Rotten,least confident,0.9154734,True
+Semi fresh Tomato(10-24)/IMG_20251117_140457996_HDR_AE.jpg,Semi Fresh,least confident,0.91668725,True
+Fresh Bittermelon(1-3)/aug_170_IMG_20260116_030307.jpg,Fresh,least confident,0.9176437,True
+Rotten banana(7-13)/IMG_20251114_213808065_HDR.jpg,Rotten,least confident,0.9188354,True
+Rotten eggplant(8-15)/IMG_20251115_121957122_HDR_AE.jpg,Rotten,least confident,0.9226238,True
+Semi fresh Pineapple (15-25)/aug_348_IMG_20251117_141238562_HDR_AE.jpg,Semi Fresh,least confident,0.9243241,True
+Rotten Pineapple(25-35)/aug_317_IMG-20251215-WA0029.jpg,Rotten,least confident,0.92543036,True
+Rotten Bittermelon(5-8)/aug_194_IMG_20260125_005806.jpg,Rotten,least confident,0.9256771,True
+Semi fresh Pineapple (15-25)/aug_20_IMG_20251120_204748013_HDR.jpg,Semi Fresh,least confident,0.9262906,True
+Rotten Pineapple(25-35)/IMG_20251126_194140940_HDR.jpg,Rotten,least confident,0.9272747,True
+Fresh Orange(1-9)/IMG_20251108_121759658_HDR_AE.jpg,Fresh,least confident,0.9288576,True
+Rotten banana(7-13)/IMG_20251114_213814338_HDR.jpg,Rotten,least confident,0.931277,True
+Semi_Fresh eggplant(4-8)/aug_283_IMG_20251122_205347412_HDR.jpg,Semi Fresh,least confident,0.9315888,True
+Rotten banana(7-13)/IMG_20251112_112653105_HDR_AE.jpg,Rotten,least confident,0.9331334,True
+Rotten banana(7-13)/aug_27_IMG_20251109_112026305_HDR_AE.jpg,Rotten,least confident,0.9372779,True
+Rotten Papaya(7-12)/IMG_20260209_011158.jpg,Rotten,least confident,0.9389378,True
+Rotten Bittermelon(5-8)/aug_39_IMG_20251202_015841.jpg,Rotten,least confident,0.93942904,True
+Rotten banana(7-13)/IMG_20251112_112712830_HDR_AE.jpg,Rotten,least confident,0.93996376,True
+Rotten banana(7-13)/IMG_20251201_132606979_HDR.jpg,Rotten,least confident,0.94092196,True
+Semi_Fresh eggplant(4-8)/IMG_20251130_182225986_HDR.jpg,Semi Fresh,random,0.8073974,False
+Fresh Tomato(1-10)/IMG_20251104_132531355_HDR_AE.jpg,Fresh,random,0.5511161,False
+Rotten banana(7-13)/IMG_20251125_210259490_HDR.jpg,Rotten,random,0.71918625,False
+Semi fresh Tomato(10-24)/IMG_20251201_185919467_HDR.jpg,Semi Fresh,random,0.5611686,False
+Rotten Tomato(24-35)/IMG_20260128_095500550_HDR_AE.jpg,Rotten,random,0.9907969,False
+Fresh Bittermelon(1-3)/aug_393_IMG_20260120_004855.jpg,Fresh,random,0.9784938,False
+Fresh Orange(1-9)/aug_85_IMG-20251121-WA0024.jpg,Fresh,random,0.5803641,False
+Fresh pineapple(1-15)/IMG_20251102_081336439_HDR_AE.jpg,Fresh,random,0.9825081,True
+Semi Fresh Papaya(4-7)/aug_189_IMG_20260214_025259.jpg,Semi Fresh,random,0.8684916,False
+Fresh Bittermelon(1-3)/IMG_20251117_155845.jpg,Fresh,random,0.6866053,False
+Fresh Orange(1-9)/aug_8_IMG-20251117-WA0010.jpg,Fresh,random,0.76021874,False
+Semi fresh Orange(9-20)/IMG_20251125_185816141_HDR.jpg,Semi Fresh,random,0.965794,False
+Semi fresh Orange(9-20)/IMG_20251124_191428358_HDR.jpg,Semi Fresh,random,0.9814906,False
+Semi fresh Orange(9-20)/aug_81_IMG-20251125-WA0030.jpg,Semi Fresh,random,0.75074804,False
+Rotten Papaya(7-12)/IMG_20251202_021506.jpg,Rotten,random,0.98584473,True
+Semi Fresh Papaya(4-7)/aug_126_IMG_20260120_004456.jpg,Semi Fresh,random,0.597372,False
+Semi fresh Orange(9-20)/IMG_20251123_221527989_HDR.jpg,Semi Fresh,random,0.8904374,False
+Semi fresh Tomato(10-24)/aug_292_IMG_20251113_124035764_HDR_AE.jpg,Semi Fresh,random,0.9613719,False
+Rotten banana(7-13)/aug_158_IMG_20260124_113207851_HDR_AE.jpg,Rotten,random,0.9921183,True
+Semi fresh Tomato(10-24)/aug_283_IMG_20251113_123942580_HDR_AE.jpg,Semi Fresh,random,0.5960679,False
+Fresh Orange(1-9)/aug_169_IMG_20251104_132142033_HDR_AE.jpg,Fresh,random,0.9956169,True
+Fresh Papaya(1-4)/aug_97_IMG_20260114_004748.jpg,Fresh,random,0.982271,False
+Semi fresh Tomato(10-24)/IMG_20251120_204532339_HDR.jpg,Semi Fresh,random,0.983164,False
+Semi fresh banana(4-7)/aug_165_IMG_20251123_110136469_HDR_AE.jpg,Semi Fresh,random,0.8171079,False
+Semi fresh banana(4-7)/aug_99_IMG_20260123_181814301_HDR.jpg,Semi Fresh,random,0.99596417,False
+Fresh Bittermelon(1-3)/IMG_20251118_161123.jpg,Fresh,random,0.94963616,False
+Semi Fresh Cucumber(6-12)/aug_313_IMG_20260212_155532.jpg,Semi Fresh,random,0.751589,False
+Rotten Bittermelon(5-8)/aug_270_IMG_20260125_005706.jpg,Rotten,random,0.954271,False
+Fresh Cucumber(1-6)/IMG_20260116_030205.jpg,Fresh,random,0.70689756,False
+Rotten Cucumber(12-20)/aug_301_IMG_20251202_015507.jpg,Rotten,random,0.95179814,False
+Rotten Orange(20-35)/IMG-20251113-WA0028.jpg,Rotten,random,0.97086304,False
+Semi fresh banana(4-7)/IMG_20251106_155641383_HDR_AE.jpg,Semi Fresh,random,0.7235671,False
+Fresh Bittermelon(1-3)/IMG_20251121_081533.jpg,Fresh,random,0.94376725,False
+Semi Fresh Papaya(4-7)/aug_311_IMG_20260214_025206.jpg,Semi Fresh,random,0.7001817,False
+Fresh Bittermelon(1-3)/IMG_20251121_081517.jpg,Fresh,random,0.7536343,False
+Rotten Bittermelon(5-8)/aug_152_IMG_20260125_005629.jpg,Rotten,random,0.9721152,False
+Semi fresh Orange(9-20)/IMG_20251123_221457046_HDR.jpg,Semi Fresh,random,0.92895794,False
+Semi fresh Pineapple (15-25)/aug_184_IMG-20251205-WA0040.jpg,Semi Fresh,random,0.9853302,True
+Rotten eggplant(8-15)/aug_280_IMG_20251201_133332980_HDR.jpg,Rotten,random,0.9700041,False
+Fresh Papaya(1-4)/aug_7_IMG_20260116_030702.jpg,Fresh,random,0.64887047,False
+Semi fresh Orange(9-20)/aug_60_IMG_20251119_200517397_HDR.jpg,Semi Fresh,random,0.9803607,False
+Rotten Bittermelon(5-8)/IMG_20260123_014014.jpg,Rotten,random,0.9724305,False
+Rotten eggplant(8-15)/aug_91_IMG_20251112_113420934_HDR_AE.jpg,Rotten,random,0.98754233,True
+Fresh eggplant(1-4)/IMG_20251121_143731710_HDR_AE.jpg,Fresh,random,0.9993918,False
+Semi Fresh Cucumber(6-12)/IMG_20260212_155150.jpg,Semi Fresh,random,0.96995294,False
+Fresh Banana(1-4)/aug_293_IMG_20251119_201238608_HDR.jpg,Fresh,random,0.80965906,False
+Fresh pineapple(1-15)/aug_84_IMG_20251107_114727937_HDR_AE.jpg,Fresh,random,0.9826674,True
+Semi Fresh Cucumber(6-12)/aug_257_IMG_20260120_004407.jpg,Semi Fresh,random,0.81727886,False
+Fresh Tomato(1-10)/IMG_20251122_210243250_HDR.jpg,Fresh,random,0.9766449,False
+Rotten Orange(20-35)/aug_118_IMG-20260128-WA0019.jpg,Rotten,random,0.8472767,False
+Rotten Bittermelon(5-8)/aug_7_IMG_20260122_003417.jpg,Rotten,random,0.9462122,True
+Fresh Orange(1-9)/IMG-20251121-WA0010.jpg,Fresh,random,0.88455796,False
+Rotten Papaya(7-12)/aug_52_IMG_20251202_021818.jpg,Rotten,random,0.9851059,True
+Fresh Papaya(1-4)/aug_287_IMG_20260114_004650.jpg,Fresh,random,0.9391846,False
+Fresh Cucumber(1-6)/aug_205_IMG_20260116_030059.jpg,Fresh,random,0.6767283,False
+Fresh eggplant(1-4)/aug_150_IMG_20251127_192947267_HDR.jpg,Fresh,random,0.7415332,False
+Rotten Cucumber(12-20)/IMG_20251202_015510.jpg,Rotten,random,0.992597,False
+Rotten Papaya(7-12)/aug_240_IMG_20260122_002619.jpg,Rotten,random,0.927223,False
+Semi Fresh Papaya(4-7)/aug_236_IMG_20260120_004501.jpg,Semi Fresh,random,0.61636555,False
+Fresh Cucumber(1-6)/aug_51_IMG_20260114_005552.jpg,Fresh,random,0.8854143,False
+Semi Fresh Papaya(4-7)/aug_130_IMG_20260123_013738.jpg,Semi Fresh,random,0.68702656,False
+Rotten Tomato(24-35)/IMG-20260210-WA0015.jpg,Rotten,random,0.6483824,False
+Rotten Cucumber(12-20)/IMG_20251202_015503.jpg,Rotten,random,0.9685398,False
+Fresh Banana(1-4)/aug_330_IMG_20251119_201238608_HDR.jpg,Fresh,random,0.9644882,False
+Fresh pineapple(1-15)/aug_67_IMG_20251105_103354723_HDR_AE.jpg,Fresh,random,0.9982644,True
+Semi Fresh Cucumber(6-12)/aug_172_IMG_20260120_004423.jpg,Semi Fresh,random,0.96781397,False
+Rotten Orange(20-35)/aug_1_IMG-20260128-WA0022.jpg,Rotten,random,0.98600304,False
+Rotten eggplant(8-15)/aug_375_IMG_20251130_180956091_HDR.jpg,Rotten,random,0.5840684,False
+Semi fresh Tomato(10-24)/IMG_20251113_124025390_HDR_AE.jpg,Semi Fresh,random,0.89900815,False
+Fresh Tomato(1-10)/IMG_20251105_103102353_HDR_AE.jpg,Fresh,random,0.61722237,False
+Semi Fresh Bittermelon ( 3-5)/aug_207_IMG_20251123_013443.jpg,Semi Fresh,random,0.92115325,False
+Fresh Tomato(1-10)/IMG_20251106_155825772_HDR_AE.jpg,Fresh,random,0.9877201,False
+Rotten Orange(20-35)/aug_39_IMG-20251113-WA0027.jpg,Rotten,random,0.8904031,False
+Rotten Papaya(7-12)/IMG_20260130_163535.jpg,Rotten,random,0.9252993,False
+Fresh pineapple(1-15)/aug_327_IMG-20251128-WA0021.jpg,Fresh,random,0.98442,False
+Fresh Banana(1-4)/aug_358_IMG_20251119_201314202_HDR.jpg,Fresh,random,0.96910995,False
+Rotten Orange(20-35)/aug_422_IMG-20260130-WA0103.jpg,Rotten,random,0.9951119,False
+Fresh Tomato(1-10)/IMG_20260120_095846494_HDR_AE.jpg,Fresh,random,0.9776005,False
+Semi Fresh Cucumber(6-12)/IMG_20260120_005047.jpg,Semi Fresh,random,0.5983787,False
+Fresh Bittermelon(1-3)/aug_264_IMG_20260114_005323.jpg,Fresh,random,0.98130393,False
+Fresh Tomato(1-10)/IMG_20251123_222833366_HDR.jpg,Fresh,random,0.9898359,False
+Semi Fresh Papaya(4-7)/aug_180_IMG_20260214_025211.jpg,Semi Fresh,random,0.83077896,False
+Fresh Papaya(1-4)/aug_92_IMG_20251029_095751.jpg,Fresh,random,0.9945807,False
+Rotten Bittermelon(5-8)/aug_19_IMG_20260125_005648.jpg,Rotten,random,0.94948375,False
+Semi Fresh Cucumber(6-12)/IMG_20260212_155302.jpg,Semi Fresh,random,0.8232417,False
+Rotten Papaya(7-12)/IMG_20251202_021446.jpg,Rotten,random,0.7197699,False
+Semi fresh banana(4-7)/aug_76_IMG_20251107_113727779_HDR_AE.jpg,Semi Fresh,random,0.5510426,False
+Fresh Tomato(1-10)/IMG_20251124_192459436_HDR.jpg,Fresh,random,0.9529454,False
+Semi fresh Pineapple (15-25)/aug_282_IMG_20251122_211235094_HDR.jpg,Semi Fresh,random,0.98004395,True
+Rotten Pineapple(25-35)/IMG-20251227-WA0041.jpg,Rotten,random,0.8652956,False
+Rotten Tomato(24-35)/aug_65_IMG_20260124_113018149_HDR_AE.jpg,Rotten,random,0.59058225,False
+Rotten Pineapple(25-35)/aug_196_IMG-20260130-WA0121.jpg,Rotten,random,0.64570993,False
+Fresh Bittermelon(1-3)/IMG_20251121_081550.jpg,Fresh,random,0.7421979,False
+Fresh Banana(1-4)/aug_336_IMG_20251104_131801730_HDR_AE.jpg,Fresh,random,0.9922082,True
+Rotten Tomato(24-35)/aug_239_IMG_20260124_113045335_HDR_AE.jpg,Rotten,random,0.8131525,False
+Semi Fresh Cucumber(6-12)/aug_260_IMG_20260212_155608.jpg,Semi Fresh,random,0.6645696,False
+Fresh Tomato(1-10)/IMG_20251121_145037073_HDR_AE.jpg,Fresh,random,0.92993087,False
+Rotten Bittermelon(5-8)/IMG_20260120_005014.jpg,Rotten,random,0.9955005,True
+Semi Fresh Bittermelon ( 3-5)/aug_185_IMG_20260122_003328.jpg,Semi Fresh,random,0.7353283,False
+Rotten Bittermelon(5-8)/IMG_20260125_005720.jpg,Rotten,random,0.9615849,False
+Rotten Orange(20-35)/aug_129_IMG-20251113-WA0026.jpg,Rotten,random,0.9601273,True
+Rotten Orange(20-35)/aug_336_IMG-20251207-WA0004.jpg,Rotten,random,0.59152883,False
+Rotten eggplant(8-15)/IMG_20251118_165242297_HDR.jpg,Rotten,random,0.96808493,True
+Fresh pineapple(1-15)/aug_293_IMG_20251104_133243728_HDR_AE.jpg,Fresh,random,0.9579488,True
+Fresh Bittermelon(1-3)/aug_107_IMG_20260116_030227.jpg,Fresh,random,0.7433817,False
+Fresh eggplant(1-4)/aug_60_IMG_20251120_201416434_HDR.jpg,Fresh,random,0.99643636,True
+Fresh Banana(1-4)/aug_193_IMG_20251104_131713223_HDR_AE.jpg,Fresh,random,0.97140265,True
+Semi Fresh Bittermelon ( 3-5)/aug_117_IMG_20251123_013122.jpg,Semi Fresh,random,0.9693103,False
+Fresh Bittermelon(1-3)/aug_63_IMG_20260114_010513.jpg,Fresh,random,0.9955479,True
+Fresh Cucumber(1-6)/aug_449_IMG_20260114_010241.jpg,Fresh,random,0.974761,False
+Rotten Pineapple(25-35)/aug_299_IMG-20251227-WA0028.jpg,Rotten,random,0.97653484,True
+Fresh eggplant(1-4)/aug_241_IMG_20251127_192846354_HDR.jpg,Fresh,random,0.8258871,False
+Semi Fresh Papaya(4-7)/IMG_20251124_021917.jpg,Semi Fresh,random,0.7491931,False
+Fresh Bittermelon(1-3)/aug_126_IMG_20260114_005359.jpg,Fresh,random,0.96541905,False
+Fresh Orange(1-9)/aug_100_IMG_20251110_094248325_HDR_AE.jpg,Fresh,random,0.96703845,True
+Semi fresh Orange(9-20)/IMG_20251130_180357481_HDR.jpg,Semi Fresh,random,0.9726362,False
+Fresh Tomato(1-10)/IMG_20251126_192636098_HDR.jpg,Fresh,random,0.8831217,False
+Semi Fresh Bittermelon ( 3-5)/IMG_20260123_013941.jpg,Semi Fresh,random,0.626722,False
+Rotten Cucumber(12-20)/aug_487_IMG_20260209_011500.jpg,Rotten,random,0.8397995,False
+Rotten Tomato(24-35)/IMG_20251203_101152305_HDR.jpg,Rotten,random,0.9523306,False
+Semi_Fresh eggplant(4-8)/aug_277_IMG_20251124_193344557_HDR.jpg,Semi Fresh,random,0.86750734,False
+Semi fresh banana(4-7)/aug_155_IMG_20251122_112439179_HDR_AE.jpg,Semi Fresh,random,0.6393639,False
+Fresh Banana(1-4)/aug_237_IMG_20251119_201217560_HDR.jpg,Fresh,random,0.9769395,True
+Rotten Orange(20-35)/aug_162_IMG-20260130-WA0099.jpg,Rotten,random,0.8496018,False
+Fresh Bittermelon(1-3)/IMG_20260116_030231.jpg,Fresh,random,0.78119355,False
+Semi fresh banana(4-7)/aug_264_IMG_20251124_190737122_HDR.jpg,Semi Fresh,random,0.8872817,False
+Semi Fresh Papaya(4-7)/aug_383_IMG_20251124_021913.jpg,Semi Fresh,random,0.9261335,False
+Semi fresh Tomato(10-24)/IMG_20251114_214152025_HDR.jpg,Semi Fresh,random,0.9025508,False
+Rotten Orange(20-35)/aug_416_IMG-20260128-WA0009.jpg,Rotten,random,0.98875463,False
+Rotten Tomato(24-35)/aug_120_IMG-20260210-WA0023.jpg,Rotten,random,0.8784569,False
+Rotten Papaya(7-12)/IMG_20251202_021148.jpg,Rotten,random,0.7476441,False
+Fresh Bittermelon(1-3)/aug_238_IMG_20251117_155819.jpg,Fresh,random,0.907961,False
+Fresh Papaya(1-4)/aug_421_IMG_20260116_030626.jpg,Fresh,random,0.72309774,False
+Semi_Fresh eggplant(4-8)/aug_106_IMG_20251127_192604365_HDR.jpg,Semi Fresh,random,0.81571513,False
+Semi fresh Tomato(10-24)/IMG_20251121_145717728_HDR_AE.jpg,Semi Fresh,random,0.62970585,False
+Fresh Cucumber(1-6)/aug_193_IMG_20260114_010402.jpg,Fresh,random,0.98195857,False
+Fresh Cucumber(1-6)/aug_344_IMG_20251029_095851.jpg,Fresh,random,0.9872278,False
+Rotten eggplant(8-15)/aug_388_IMG_20251116_215929652_HDR.jpg,Rotten,random,0.6227258,False
+Semi fresh banana(4-7)/IMG_20251106_155448875_HDR.jpg,Semi Fresh,random,0.76683307,False
+Semi fresh banana(4-7)/aug_238_IMG_20251122_112545956_HDR_AE.jpg,Semi Fresh,random,0.94918203,True
+Fresh Tomato(1-10)/IMG_20251130_181506581_HDR.jpg,Fresh,random,0.82326096,False
+Fresh Tomato(1-10)/IMG_20251130_181137243_HDR.jpg,Fresh,random,0.92623496,False
+Semi Fresh Papaya(4-7)/aug_83_IMG_20260120_004456.jpg,Semi Fresh,random,0.5868792,False
+Rotten Papaya(7-12)/IMG_20260209_011141_1.jpg,Rotten,random,0.974589,True
+Fresh Bittermelon(1-3)/IMG_20251118_161024.jpg,Fresh,random,0.8235479,False
+Semi fresh Tomato(10-24)/IMG_20251117_140531246_HDR_AE.jpg,Semi Fresh,random,0.9573996,False
+Fresh eggplant(1-4)/IMG_20251122_205800088_HDR.jpg,Fresh,random,0.99702924,False
+Semi fresh Orange(9-20)/aug_111_IMG_20251126_191545057_HDR.jpg,Semi Fresh,random,0.7240867,False
+Rotten Orange(20-35)/aug_268_IMG-20251113-WA0023.jpg,Rotten,random,0.77596295,False
+Rotten Tomato(24-35)/IMG_20251201_133238580_HDR.jpg,Rotten,random,0.7044672,False

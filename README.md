@@ -18,9 +18,50 @@ Image dataset of 8 fruits/vegetables at 3 freshness levels (24 classes), with th
   temperature scaling, ECE and reliability diagrams.
 - **`adversarial.py`**, **`robustness_eval.py`**, **`robust_inference.py`**: robustness and security
   evaluation of the original (v1.1) vs. robust (v1.2) model (see "4. Robustness" below).
+- **`adapt.py`**, **`feature_ood.py`**: drift adaptation experiment, and the final online pipeline with a
+  Mahalanobis OOD gate.
+- **`continual.py`**: continual learning (class-balanced replay), drift monitoring, release gate,
+  versioning, and the active-learning / human-in-the-loop simulation.
+- **`compare_backbones.py`**: ResNet-18 vs. Swin-T on the Milestone 2 setup (3 seeds each).
+- **`demo.py`**: end-to-end demo: load → infer → detect drift → query human → update model.
 
 Results write-up: [reports/training_report.md](reports/training_report.md),
-[reports/robustness_report.md](reports/robustness_report.md).
+[reports/robustness_report.md](reports/robustness_report.md),
+[reports/continual_learning_report.md](reports/continual_learning_report.md).
+
+### Pipeline overview
+
+| Stage | Script(s) | Outputs |
+|---|---|---|
+| Data (EDA, cleaning, split) | `eda.py`, `train.py` (split) | `eda_output/`, `runs/split_seed42.csv` |
+| Active-learning head (VLM selection) | `clip_selection.py` | `clip_output/` |
+| Training | `train.py`, `summarize_runs.py` | `runs/<run>/` |
+| Efficiency | `benchmark_inference.py` | `runs/<run>/efficiency.json` |
+| Robustness tests | `stress_test.py`, `robustness_eval.py`, `adversarial.py` | `runs/<run>/stress/`, `runs/robustness/` |
+| Monitoring, OOD gate, abstention | `robust_inference.py`, `feature_ood.py` | `runs/robustness/` |
+| Adaptation | `adapt.py` | `runs/robustness/adaptation.csv` |
+| Continual learning | `continual.py` | `runs/continual/` |
+| HITL / active learning | `continual.py --methods ...` | `runs/continual_al360/` |
+| Backbone comparison | `train.py --backbone swin_t`, `compare_backbones.py` | `runs/backbones/` |
+| End-to-end demo | `demo.py` | `demo_output/` |
+
+## Quick start: end-to-end demo
+
+After the setup below, with the dataset in `Processed Data/` and the robust model trained (step 4, or
+just `python train.py ... --augment --run-name s4x40_robust`):
+
+```bash
+python demo.py                 # simulated annotator, about 1-2 minutes on a GPU
+python demo.py --interactive   # you type the labels (f / s / r) for the queried images
+```
+
+The demo loads the deployed robust ResNet-18, grades a clean batch (routing low-confidence images to
+manual inspection), receives a batch from a cheaper camera, detects the drift with the OOD-gate
+rejection rate and class-share shift, sends 300 images to a human (half the ones the model is least
+sure about, half a random sample; labels simulated with the dataset labels), runs a replay fine-tune
+(300 new + 600 replayed images) with the release gate, and reports accuracy before and after on the
+full test set. Outputs in `demo_output/`: `demo_report.json`, `demo_summary.png`,
+`queried_images.csv` and `model_updated.pt` (if the gate passes).
 
 ## Dataset
 
@@ -182,8 +223,92 @@ python feature_ood.py         # final online pipeline: Mahalanobis OOD score rep
 
 Everything is written to `runs/robustness/`: `corruption_seeds.csv`, `corruption_summary.csv`,
 `temperatures.json`, `adversarial.csv`, `pipeline_results.csv`, `pipeline_thresholds.json`,
-`latency.csv`, `memory.json`, `failure_cases.csv`, and the plots `robustness_curves.png`,
-`adversarial_curves.png`, `reliability.png`, `confidence_histograms.png`, `failure_cases.png`.
+`latency.csv`, `memory.json`, `failure_cases.csv`, `adaptation.csv`, `feature_ood.csv`,
+`feature_ood_latency.csv`, and the plots `robustness_curves.png`, `adversarial_curves.png`,
+`reliability.png`, `confidence_histograms.png`, `failure_cases.png`.
+
+### 5. Continual learning
+
+Six drift periods (T0 clean, T1 low light, T2 cheap camera, T3 mostly fresh stock, T4 warm lighting,
+T5 back to clean), 600 newly labelled images per period, starting from the robust v1.2 model:
+
+```bash
+python continual.py --methods "Static (no update)" "Naive fine-tune" "Replay, no gate" "Replay (ours)" "Cumulative retrain"
+python continual.py --plot-only   # redraw the figures from the saved CSVs
+```
+
+Writes to `runs/continual/`: `results.csv` (before/after each update), `accuracy_matrix.csv`,
+`summary.csv` (average accuracy, forgetting, backward transfer), `monitor.csv`, `efficiency.csv`,
+`latency.csv`, the plots `trajectories.png` (also `trajectory_*.png`), `accuracy_matrix.png`,
+`monitor.png`, and one folder per approved model version `v1.3.k/` (`config.json` with parent version
+and data hash, `metrics.json`, `buffer_manifest.csv`, `best.pt`).
+
+### 6. Active learning / human-in-the-loop simulation
+
+The same cycles, but only 360 of each period's 600 images are labelled: chosen by the CLIP
+active-learning head (5 sentences per class, 3 images per sentence) or at random (control). Labels come
+from the dataset (simulated annotators):
+
+```bash
+python continual.py --methods "Static (no update)" "Replay + AL 360" "Replay + random 360" --out-name continual_al360
+```
+
+Writes the same files to `runs/continual_al360/`, plus `al_selection.csv` (selection time, VRAM,
+CLIP precision, class mix of the labelled images) and `active_learning_cycles.png`.
+
+### 7. Backbone comparison (ResNet-18 vs. Swin-T)
+
+Same 3,840 selected images, split, preprocessing and v1.1 recipe; three seeds per setup. The graphs
+also include the ResNet-18 sentence-count ablations (1 × 160, 2 × 80). The ResNet-18 4 × 40 seeds are
+the v1.1 runs from step 4; seed 42 of the ablations comes from step 3.
+
+```bash
+REG="--weight-decay 0.05 --dropout 0.5 --label-smoothing 0.2 --lr-stage2 3e-5 --split-seed 42"
+for s in 42 43 44; do python train.py --sentences-per-class 4 --per-sentence 40 $REG --seed $s --backbone swin_t --config-version v1.1-swin --run-name swin_t_seed$s; done
+for s in 43 44; do
+  python train.py --sentences-per-class 1 --per-sentence 160 $REG --seed $s --config-version v1.1 --run-name s1x160_reg_seed$s
+  python train.py --sentences-per-class 2 --per-sentence 80  $REG --seed $s --config-version v1.1 --run-name s2x80_reg_seed$s
+done
+python compare_backbones.py
+```
+
+Writes to `runs/backbones/`: `comparison.csv`, `summary.csv`, `plot_data.csv`, `latency.csv`, and the
+plots `test_accuracy.png`, `test_f1.png`, `backbone_comparison.png`, `latency.png`.
+
+`plot_data.csv` holds the numbers behind the accuracy / F1 graphs (one row per setup and seed: `setup`,
+`label` with ` | ` as line break, `colour`, `seed`, `accuracy`, `f1_macro`). After editing it, or
+`latency.csv`, redraw every graph without retraining:
+
+```bash
+python compare_backbones.py --plot-only
+```
+
+`plot_ablation_3seeds.py` draws the same layout as `runs/ablation_test.png` (test accuracy + per-class
+test F1) for these four setups, as 3-seed means with standard-deviation error bars, from the saved
+`metrics.json` files (no retraining). It writes `runs/backbones/ablation_3seeds.csv` (one row per setup
+and seed), `ablation_3seeds_summary.csv` and `ablation_test_3seeds.png`; after editing the CSV, redraw
+with `python plot_ablation_3seeds.py --from-csv`.
+
+## Reproducibility
+
+- **Seeds:** every script takes `--seed` (default 42). The data split is built once and saved to
+  `runs/split_seed42.csv`; all runs reuse it (`--split-seed 42` fixes it when the training seed varies).
+- **Configurations** are versioned in each run's `config.json` (v1.1 original, v1.2 robust, v1.3.k
+  continual updates, v1.1-swin), together with the Python / PyTorch versions and GPU.
+- **Paths** are relative to the project root; image paths in all CSVs are relative to `Processed Data/`.
+- **GPU non-determinism:** training on a GPU is not bit-for-bit reproducible. Repeated runs of the same
+  command land within about ±1.5 points of accuracy of the reported numbers (multi-seed results report
+  mean ± std for this reason).
+- **Environment used for the reported results:** Windows 11, Python 3.12, PyTorch 2.14.1 (CUDA 13.0),
+  torchvision 0.29.1, transformers 5.18, NVIDIA RTX 4050 Laptop GPU (6 GB).
+
+## Saved output artifacts
+
+Checkpoints (`*.pt`), cached embeddings and logs are not committed (see `.gitignore`), but every result
+table and figure is: for example `runs/s4x40_reg/metrics.json`, `runs/robustness/corruption_summary.csv`,
+`runs/continual/summary.csv`, `runs/continual_al360/active_learning_cycles.png`,
+`runs/backbones/backbone_comparison.png` and `demo_output/demo_report.json`. Rerunning a script
+regenerates its files in place.
 
 ## Notes
 

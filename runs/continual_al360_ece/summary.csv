@@ -1,0 +1,2 @@
+method,final_avg_accuracy,final_avg_f1,avg_accuracy_on_current_period,forgetting,backward_transfer
+Replay + AL 360,0.8368102847769182,0.8235711297198035,0.8506510069620147,0.017161862013820993,-0.016608866622115914
